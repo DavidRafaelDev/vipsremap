@@ -1,0 +1,61 @@
+<div class="dashboard-container">
+    <app-menu></app-menu>
+    <div class="dashboard-content">
+        <!-- formulario.component.html -->
+        <div class="container mt-4">
+            <h2>Formulário</h2>
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="cliente">Cliente:</label>
+                    <input type="text" class="form-control" id="cliente" [(ngModel)]="dadosFormulario.cliente"
+                        name="cliente" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="veiculo">Veículo:</label>
+                    <input type="text" class="form-control" id="veiculo" [(ngModel)]="dadosFormulario.veiculo"
+                        name="veiculo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="representante">Representante:</label>
+                    <input type="text" class="form-control" id="representante"
+                        [(ngModel)]="dadosFormulario.representante" name="representante" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="TME">TME:</label>
+                    <input type="text" class="form-control" id="TME" [(ngModel)]="dadosFormulario.TME" name="TME"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="custo">Custo:</label>
+                    <input type="text" class="form-control" id="custo" [(ngModel)]="dadosFormulario.custo" name="custo"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pedido">Pedido:</label>
+                    <input type="text" class="form-control" id="pedido" [(ngModel)]="dadosFormulario.pedido"
+                        name="pedido" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="envio">Envio:</label>
+                    <input type="text" class="form-control" id="envio" [(ngModel)]="dadosFormulario.envio" name="envio"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="finalizacao">Finalização:</label>
+                    <input type="text" class="form-control" id="finalizacao" [(ngModel)]="dadosFormulario.finalizacao"
+                        name="finalizacao" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+
+    </div>
+</div>
