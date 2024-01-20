@@ -9,12 +9,14 @@ import { LoginComponent } from './Features/login/login.component';
 import { MenuComponent } from './Core/menu/menu.component';
 import { AddServicoComponent } from './Features/add-servico/add-servico.component';
 import { FormsModule } from '@angular/forms';
-
+import { RepresentantesComponent } from './Features/representantes/representantes.component';
+import { HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: DashboardComponent },
-  { path: 'servico', component: AddServicoComponent }
+  { path: 'servico', component: AddServicoComponent },
+  { path: 'representantes', component: RepresentantesComponent }
 ];
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ const routes: Routes = [
     DashboardComponent,
     MenuComponent,
     AddServicoComponent,
+    RepresentantesComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
