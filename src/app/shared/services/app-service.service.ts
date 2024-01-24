@@ -12,4 +12,9 @@ export class AppServiceService {
   getRepresentantes(): Observable<any>{
     return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/representantes')
   }
-}
+  getServicos(): Observable<any>{
+  return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/servicos')
+}}
+
+
+

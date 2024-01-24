@@ -8,8 +8,6 @@ import { AppServiceService } from 'src/app/shared/services/app-service.service';
 })
 export class RepresentantesComponent implements OnInit {
 
-
-
 representantes: any[] = [];
 
 constructor(private service: AppServiceService){

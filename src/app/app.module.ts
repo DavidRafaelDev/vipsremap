@@ -11,12 +11,15 @@ import { AddServicoComponent } from './Features/add-servico/add-servico.componen
 import { FormsModule } from '@angular/forms';
 import { RepresentantesComponent } from './Features/representantes/representantes.component';
 import { HttpClientModule} from '@angular/common/http';
+import { ServicosComponent } from './Features/serviços/servicos.component';
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: DashboardComponent },
   { path: 'servico', component: AddServicoComponent },
-  { path: 'representantes', component: RepresentantesComponent }
+  { path: 'representantes', component: RepresentantesComponent },
+  { path: 'servicos', component: ServicosComponent}
 ];
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ const routes: Routes = [
     MenuComponent,
     AddServicoComponent,
     RepresentantesComponent,
+    ServicosComponent,
   ],
   imports: [
     BrowserModule,

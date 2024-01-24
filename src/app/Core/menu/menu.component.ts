@@ -17,4 +17,7 @@ goToDashboard(){
 goToRepresentante(){
   this.route.navigate(['/', 'representantes'])
 }
+goToServicos(){
+  this.route.navigate(['/', 'servicos'])
+}
 }

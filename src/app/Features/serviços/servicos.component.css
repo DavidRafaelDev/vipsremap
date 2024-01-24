@@ -19,9 +19,6 @@
     align-items: center;
     flex-direction: column;
 }
-.txtrepresentante{
-    font-size: 25px ;
-}
-.representante-content{
+.servico-content{
     width: 98%;
 }
