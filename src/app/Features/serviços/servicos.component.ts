@@ -7,12 +7,11 @@ import { AppServiceService } from 'src/app/shared/services/app-service.service';
   styleUrls: ['./servicos.component.css']
 })
 export class ServicosComponent implements OnInit {
-
 servicos: any[] = [];
 
-constructor(private service: AppServiceService){
+constructor(private service: AppServiceService){}
+adicionarServico: any = {};
 
-}
   ngOnInit(): void {
   this.getServicos();
 }
@@ -20,7 +19,6 @@ constructor(private service: AppServiceService){
   this.service.getServicos().subscribe((result:any)=>{
   this.servicos = result
   console.log('teste',result)
-
   })
 
 }}  

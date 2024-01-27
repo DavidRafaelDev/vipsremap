@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-servico.component.css']
 })
 export class AddServicoComponent {
+
+    novoServico: any  = {}
+
   dadosFormulario = {
     id: 1,
     cliente: '',
@@ -17,8 +20,9 @@ export class AddServicoComponent {
     envio: '',
     finalizacao: ''
   };
-
-  onSubmit() {
-    console.log('enviar formulario');
+    onSubmit() {
+    console.log(this.dadosFormulario);
   }
 }
+
+

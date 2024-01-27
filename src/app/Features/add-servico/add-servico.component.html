@@ -37,7 +37,7 @@
 
                 <div class="form-group">
                     <label for="pedido">Pedido:</label>
-                    <input type="text" class="form-control" id="pedido" [(ngModel)]="dadosFormulario.pedido"
+                    <input type="text" class="form-control" id="pedido" [(ngModel)]="novoServico.pedido"
                         name="pedido" required>
                 </div>
 
@@ -52,10 +52,12 @@
                     <input type="text" class="form-control" id="finalizacao" [(ngModel)]="dadosFormulario.finalizacao"
                         name="finalizacao" required>
                 </div>
-
+                  <input type="text" id="nome" name="nome" [(ngModel)]="novoServico.nome" 
+                class="form-control" required>
                 <button type="submit" class="btn btn-primary">Enviar</button>
+              
             </form>
         </div>
-
     </div>
+  
 </div>

@@ -14,7 +14,8 @@ export class AppServiceService {
   }
   getServicos(): Observable<any>{
   return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/servicos')
+}
+  adicionarServico(servico: any): Observable<any> {
+  return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/servicos', servico);
 }}
-
-
 

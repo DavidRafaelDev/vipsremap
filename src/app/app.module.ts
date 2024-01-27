@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { RepresentantesComponent } from './Features/representantes/representantes.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ServicosComponent } from './Features/serviços/servicos.component';
+import { UserService } from './Features/user/user.service'
+
 
 
 const routes: Routes = [
@@ -32,14 +34,15 @@ const routes: Routes = [
     ServicosComponent,
   ],
   imports: [
+    
     BrowserModule,
     NgbModule,
     RouterModule.forRoot(routes),
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [UserService],
+    bootstrap: [AppComponent]
 })
 
 export class AppModule { }
