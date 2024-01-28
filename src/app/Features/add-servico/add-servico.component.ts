@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppServiceService } from 'src/app/shared/services/app-service.service';
 
 @Component({
   selector: 'app-add-servico',
@@ -7,12 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AddServicoComponent {
 
-    novoServico: any  = {}
+  constructor(private appService: AppServiceService) { }
+
+  novoServico: any = {}
 
   dadosFormulario = {
     id: 1,
     cliente: '',
     veiculo: '',
+    servico: '',
     representante: '',
     TME: '',
     custo: '',
@@ -20,9 +24,10 @@ export class AddServicoComponent {
     envio: '',
     finalizacao: ''
   };
-    onSubmit() {
-    console.log(this.dadosFormulario);
-  }
-}
-
+  onSubmit() {
+    this.appService.adicionarServico(this.novoServico).subscribe(() => {
+      console.log('Serviço adicionado com sucesso!');
+      this.novoServico = {};
+    });
+   }}
 
