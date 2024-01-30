@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,16 +12,17 @@ import { RepresentantesComponent } from './Features/representantes/representante
 import { HttpClientModule} from '@angular/common/http';
 import { ServicosComponent } from './Features/serviços/servicos.component';
 import { UserService } from './Features/user/user.service'
-
-
+import {ClientesComponent }from './Features/clientes/clientes.component'
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: DashboardComponent },
   { path: 'servico', component: AddServicoComponent },
   { path: 'representantes', component: RepresentantesComponent },
-  { path: 'servicos', component: ServicosComponent}
+  { path: 'servicos', component: ServicosComponent},
+  { path: 'clientes', component: ClientesComponent}
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +32,7 @@ const routes: Routes = [
     AddServicoComponent,
     RepresentantesComponent,
     ServicosComponent,
+    ClientesComponent,
   ],
   imports: [
     

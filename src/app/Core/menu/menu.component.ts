@@ -20,4 +20,16 @@ goToRepresentante(){
 goToServicos(){
   this.route.navigate(['/', 'servicos'])
 }
+goToClientes(){
+  this.route.navigate(['/', 'clientes'])
+}
+goToVeiculos(){
+  this.route.navigate(['/', 'veiculos'])
+}
+goToLoja(){
+  this.route.navigate(['/', 'loja'])
+}
+goToSair(){
+  this.route.navigate(['/', 'sair'])
+}
 }
