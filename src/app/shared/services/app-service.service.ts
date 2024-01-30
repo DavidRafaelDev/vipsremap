@@ -9,16 +9,19 @@ export class AppServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getRepresentantes(): Observable<any>{
-    return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/representantes')
+getRepresentantes(): Observable<any>{
+  return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/representantes')
   }
-  getServicos(): Observable<any>{
+getServicos(): Observable<any>{
   return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/servicos')
 }
 getClientes(): Observable<any>{
    return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/clientes')
 }
-  adicionarServico(servico: any): Observable<any> {
+getVeiculos(): Observable<any>{
+  return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/veiculos')
+}
+ adicionarServico(servico: any): Observable<any> {
   return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/servicos', servico);
 }}
 

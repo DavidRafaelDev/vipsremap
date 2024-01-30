@@ -13,6 +13,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { ServicosComponent } from './Features/serviços/servicos.component';
 import { UserService } from './Features/user/user.service'
 import {ClientesComponent }from './Features/clientes/clientes.component'
+import {VeiculosComponent} from './Features/veiculos/veiculos.component'
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'servico', component: AddServicoComponent },
   { path: 'representantes', component: RepresentantesComponent },
   { path: 'servicos', component: ServicosComponent},
-  { path: 'clientes', component: ClientesComponent}
+  { path: 'clientes', component: ClientesComponent},
+  { path: 'veiculos', component: VeiculosComponent}
 ];
 
 @NgModule({
@@ -33,6 +35,8 @@ const routes: Routes = [
     RepresentantesComponent,
     ServicosComponent,
     ClientesComponent,
+    VeiculosComponent
+
   ],
   imports: [
     
