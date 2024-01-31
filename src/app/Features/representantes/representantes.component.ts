@@ -17,7 +17,7 @@ constructor(private service: AppServiceService){
   this.getRepresentantes();
 
   }
-
+  
 getRepresentantes(){
   this.service.getRepresentantes().subscribe((result:any)=>{
   this.representantes = result

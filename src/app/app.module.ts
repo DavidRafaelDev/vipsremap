@@ -11,9 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { RepresentantesComponent } from './Features/representantes/representantes.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ServicosComponent } from './Features/serviços/servicos.component';
-import { UserService } from './Features/user/user.service'
-import {ClientesComponent }from './Features/clientes/clientes.component'
-import {VeiculosComponent} from './Features/veiculos/veiculos.component'
+import { UserService } from './Features/user/user.service';
+import {ClientesComponent }from './Features/clientes/clientes.component';
+import {VeiculosComponent} from './Features/veiculos/veiculos.component';
+import {LojaComponent} from './Features/loja/loja.component'
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'representantes', component: RepresentantesComponent },
   { path: 'servicos', component: ServicosComponent},
   { path: 'clientes', component: ClientesComponent},
-  { path: 'veiculos', component: VeiculosComponent}
+  { path: 'veiculos', component: VeiculosComponent},
+  { path: 'loja' , component: LojaComponent}
 ];
 
 @NgModule({
@@ -35,7 +37,8 @@ const routes: Routes = [
     RepresentantesComponent,
     ServicosComponent,
     ClientesComponent,
-    VeiculosComponent
+    VeiculosComponent,
+    LojaComponent,
 
   ],
   imports: [
