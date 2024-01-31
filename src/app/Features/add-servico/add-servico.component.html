@@ -7,31 +7,36 @@
             <form (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="cliente">Cliente:</label>
-                    <input type="text" class="form-control" id="cliente" [(ngModel)]="dadosFormulario.cliente"
+                    <input type="text" class="form-control" id="cliente" [(ngModel)]="novoServico.cliente"
                         name="cliente" required>
                 </div>
 
                 <div class="form-group">
                     <label for="veiculo">Veículo:</label>
-                    <input type="text" class="form-control" id="veiculo" [(ngModel)]="dadosFormulario.veiculo"
+                    <input type="text" class="form-control" id="veiculo" [(ngModel)]="novoServico.veiculo"
                         name="veiculo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="veiculo">Serviço:</label>
+                    <input type="text" class="form-control" id="servico" [(ngModel)]="novoServico.servico" name="servico" required>
                 </div>
 
                 <div class="form-group">
                     <label for="representante">Representante:</label>
                     <input type="text" class="form-control" id="representante"
-                        [(ngModel)]="dadosFormulario.representante" name="representante" required>
+                        [(ngModel)]="novoServico.representante" name="representante" required>
                 </div>
 
                 <div class="form-group">
                     <label for="TME">TME:</label>
-                    <input type="text" class="form-control" id="TME" [(ngModel)]="dadosFormulario.TME" name="TME"
+                    <input type="text" class="form-control" id="TME" [(ngModel)]="novoServico.TME" name="TME"
                         required>
                 </div>
 
                 <div class="form-group">
                     <label for="custo">Custo:</label>
-                    <input type="text" class="form-control" id="custo" [(ngModel)]="dadosFormulario.custo" name="custo"
+                    <input type="text" class="form-control" id="custo" [(ngModel)]="novoServico.custo" name="custo"
                         required>
                 </div>
 
@@ -43,17 +48,15 @@
 
                 <div class="form-group">
                     <label for="envio">Envio:</label>
-                    <input type="text" class="form-control" id="envio" [(ngModel)]="dadosFormulario.envio" name="envio"
+                    <input type="text" class="form-control" id="envio" [(ngModel)]="novoServico.envio" name="envio"
                         required>
                 </div>
 
                 <div class="form-group">
                     <label for="finalizacao">Finalização:</label>
-                    <input type="text" class="form-control" id="finalizacao" [(ngModel)]="dadosFormulario.finalizacao"
+                    <input type="text" class="form-control" id="finalizacao" [(ngModel)]="novoServico.finalizacao"
                         name="finalizacao" required>
                 </div>
-                  <input type="text" id="nome" name="nome" [(ngModel)]="novoServico.nome" 
-                class="form-control" required>
                 <button type="submit" class="btn btn-primary">Enviar</button>
               
             </form>

@@ -1,6 +1,9 @@
+
 <div class="container">
-    <img src="https://logodownload.org/wp-content/uploads/2014/02/volkswagen-vw-logo.png">
-    <input type="email" class="form-control" placeholder="Email">
-    <input type="password" class="form-control" placeholder="Senha">
+    
+    <ngb-alert type="danger" *ngIf="erro" > Usuário ou Senha incorretos! </ngb-alert>
+    <img src="../../../assets/images/vipsremap.jpg">
+    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="login">
+    <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="senha">
     <button class="btn btn-warning" (click)=handleLogin()>Entrar </button>
 </div>

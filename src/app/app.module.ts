@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,17 +11,22 @@ import { FormsModule } from '@angular/forms';
 import { RepresentantesComponent } from './Features/representantes/representantes.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ServicosComponent } from './Features/serviços/servicos.component';
-import { UserService } from './Features/user/user.service'
-
-
+import { UserService } from './Features/user/user.service';
+import {ClientesComponent }from './Features/clientes/clientes.component';
+import {VeiculosComponent} from './Features/veiculos/veiculos.component';
+import {LojaComponent} from './Features/loja/loja.component'
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: DashboardComponent },
   { path: 'servico', component: AddServicoComponent },
   { path: 'representantes', component: RepresentantesComponent },
-  { path: 'servicos', component: ServicosComponent}
+  { path: 'servicos', component: ServicosComponent},
+  { path: 'clientes', component: ClientesComponent},
+  { path: 'veiculos', component: VeiculosComponent},
+  { path: 'loja' , component: LojaComponent}
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +36,10 @@ const routes: Routes = [
     AddServicoComponent,
     RepresentantesComponent,
     ServicosComponent,
+    ClientesComponent,
+    VeiculosComponent,
+    LojaComponent,
+
   ],
   imports: [
     

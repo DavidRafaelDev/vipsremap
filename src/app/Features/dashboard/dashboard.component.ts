@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import Chart from 'chart.js/auto';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -13,3 +15,4 @@ export class DashboardComponent {
     this.route.navigate(["/", "servico"])
   }
 }
+
