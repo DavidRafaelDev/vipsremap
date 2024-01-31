@@ -30,6 +30,6 @@ goToLoja(){
   this.route.navigate(['/', 'loja'])
 }
 goToSair(){
-  this.route.navigate(['/', ''])
+  this.route.navigate(['/', 'sair'])
 }
 }
