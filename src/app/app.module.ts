@@ -15,6 +15,7 @@ import { UserService } from './Features/user/user.service';
 import {ClientesComponent }from './Features/clientes/clientes.component';
 import {VeiculosComponent} from './Features/veiculos/veiculos.component';
 import {LojaComponent} from './Features/loja/loja.component'
+import { ModalAdicionarVeiculoComponent } from './Features/modal-adicionar-veiculo/modal-adicionar-veiculo.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'servicos', component: ServicosComponent},
   { path: 'clientes', component: ClientesComponent},
   { path: 'veiculos', component: VeiculosComponent},
-  { path: 'loja' , component: LojaComponent}
+  { path: 'loja' , component: LojaComponent},
 ];
 
 @NgModule({
@@ -39,6 +40,7 @@ const routes: Routes = [
     ClientesComponent,
     VeiculosComponent,
     LojaComponent,
+    ModalAdicionarVeiculoComponent
 
   ],
   imports: [

@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class AppServiceService {
 
   constructor(private http: HttpClient) { }
@@ -30,5 +32,8 @@ getLojas():Observable<any>{
 
 login(login: string , senha: string): Observable<any>{
   return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes?primeiro_nome=${login}&senha=${senha}`)
+}
+adicionarveiculo(veiculos: any): Observable<any> {
+  return this.http.post(`https://vipremap-2640a0fa50a5.herokuapp.com/veiculos`,veiculos);
 }
 }
