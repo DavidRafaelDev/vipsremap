@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AppServiceService {
 
+
 constructor(private http: HttpClient) { }
 
 getRepresentantes(): Observable<any>{
@@ -37,6 +38,9 @@ adicionarveiculo(veiculos: any): Observable<any> {
 }
 getLojas():Observable<any>{
   return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/loja')
+}
+adicionarprodutoloja(loja: any): Observable<any> {
+  return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/loja', loja)
 }
 login(login: string , senha: string): Observable<any>{
   return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes?primeiro_nome=${login}&senha=${senha}`)

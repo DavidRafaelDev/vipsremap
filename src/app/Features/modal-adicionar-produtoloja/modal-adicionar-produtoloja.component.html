@@ -1,0 +1,39 @@
+<div class="modal-adicionar-loja-container">
+
+    <div class="modal-adicionar-loja-header">
+
+        <h1>Adicionar Produto na Loja</h1>
+        <h3 class="close-modal" (click)="handleCloseModal()">X</h3>
+    </div>
+    <form (ngSubmit)="adicionarprodutoloja()">
+        <div class="form-group">
+            <label for="id">Código</label>
+            <input type="text" id="id" name="id" [(ngModel)]="loja.id" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="pedal">Pedal</label>
+            <input type="text" id="pedal" name="pedal" [(ngModel)]="loja.pedal" class=" form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="downpipe">Downpipe</label>
+            <input type="text" id="downpipe" name="downpipe" [(ngModel)]="loja.downpipe" class=" form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="filtro">Filtro</label>
+            <input type="text" id="filtro" name="filtro" [(ngModel)]="loja.filtro" class=" form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="cabo">Cabo</label>
+            <input type="text" id="cabo" name="escabotado" [(ngModel)]="loja.cabo" class=" form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="outros">Outros</label>
+            <input type="text" id="outros" name="outros" [(ngModel)]="loja.outros" class=" form-control" required>
+        </div>
+           <div class="btn-adicionar-cliente">
+           <button type="submit" class="btn btn-primary">Adicionar Produtos na Loja</button>
+        </div>
+          
+        </form>
+    </div>

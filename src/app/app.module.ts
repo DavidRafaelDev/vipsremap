@@ -17,7 +17,7 @@ import {VeiculosComponent} from './Features/veiculos/veiculos.component';
 import {LojaComponent} from './Features/loja/loja.component'
 import { ModalAdicionarVeiculoComponent } from './Features/modal-adicionar-veiculo/modal-adicionar-veiculo.component';
 import { ModalAdicionarClienteComponent } from './Features/modal-adicionar-cliente/modal-adicionar-cliente-component';
-
+import {ModalAdicionarLojaComponent} from './Features/modal-adicionar-produtoloja/modal-adicionar-produtoloja.component'
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -44,6 +44,7 @@ const routes: Routes = [
     LojaComponent,
     ModalAdicionarVeiculoComponent,
     ModalAdicionarClienteComponent,
+    ModalAdicionarLojaComponent
 
   ],
   imports: [

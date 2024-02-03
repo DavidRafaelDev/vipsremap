@@ -18,6 +18,7 @@
     display: flex;
     justify-content: center;
     margin-top: 4vh;
+    background-color: #3a3939;
 }
 
 input{
@@ -29,4 +30,6 @@ select{
 button{
     align-items: center;
     width: 90%;
+    background-color: #3a3939;
+    color: white;
 }

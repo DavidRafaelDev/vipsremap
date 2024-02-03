@@ -27,7 +27,6 @@ export class ClientesComponent implements OnInit {
     const modalRef = this.modalService.open(ModalAdicionarClienteComponent, { size: 'lg' });
     modalRef.result.then(()=>{
       this.getClientes();
-
       })    
     }}  
     

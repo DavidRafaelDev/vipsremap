@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from 'src/app/shared/services/app-service.service';
+import { ModalAdicionarLojaComponent } from '../modal-adicionar-produtoloja/modal-adicionar-produtoloja.component';
+import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-clientes',
@@ -10,7 +12,7 @@ export class LojaComponent implements OnInit {
 
     lojas: any[] = [];
     
-    constructor(private service: AppServiceService){
+    constructor(private service: AppServiceService, private modalService:NgbModal){
     }
       ngOnInit(): void {
       this.getLojas();
@@ -19,9 +21,13 @@ export class LojaComponent implements OnInit {
       this.service.getLojas().subscribe((result:any)=>{
       this.lojas = result
       console.log(result)
-    
-      })
-    
+    })
+  }
+      openModal() {
+        const modalRef = this.modalService.open(ModalAdicionarLojaComponent, { size: 'lg' });
+        modalRef.result.then(()=>{
+          this.getLojas();
+        })
     }}  
     
     

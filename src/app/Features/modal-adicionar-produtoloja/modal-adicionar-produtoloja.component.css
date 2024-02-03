@@ -1,26 +1,24 @@
-.modal-adicionar-veiculo-container{
+.modal-adicionar-loja-container{
     display: flex;
     flex-direction: column;
     height: auto;
     padding: 2vh;
 }
-.modal-adicionar-veiculo-header{
+.modal-adicionar-loja-header{
     padding: 2vh;
     align-items: center;
     display: flex;
     justify-content: space-between;
-    
 }
 .close-modal{
     cursor: pointer;
 }
-
-.btn-adicionar-veiculo{
+.btn-adicionar-loja{
     display: flex;
     justify-content: center;
     margin-top: 4vh;
+    background-color: #E9AD0C;
 }
-
 input{
     margin: 1vh;
 }
