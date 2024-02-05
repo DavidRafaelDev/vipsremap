@@ -5,7 +5,7 @@
 
 .deashboard-header{
     display: flex;
-    border: 1px solid black;
+    border: 1px solid white;
     width:80%;
     height: 10vh;
     margin: 5vh;
@@ -19,9 +19,13 @@
     align-items: center;
     flex-direction: column;
 }
-.txtcliente{
-    font-size: 25px ;
-}
+
 .cliente-content{
     width: 98%;
+}
+#adccliente{
+    color: rgb(255, 255, 255);
+    background-color: #3a3939;
+    float: right;
+    margin: 10px 20px;
 }

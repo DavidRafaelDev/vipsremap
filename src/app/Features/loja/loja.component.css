@@ -25,3 +25,9 @@
 .loja-content{
     width: 98%;
 }
+#adcproduto{
+    color: rgb(255, 255, 255);
+    background-color: #3a3939;
+    float: right;
+    margin: 10px 20px;
+}

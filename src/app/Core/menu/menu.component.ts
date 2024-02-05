@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 export class MenuComponent {
 
 constructor(private route: Router){
-  
 }
 goToDashboard(){
   this.route.navigate(['/', 'home'])

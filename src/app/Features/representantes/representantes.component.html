@@ -7,6 +7,7 @@
       <tr>
         <th scope="col">id</th>
         <th scope="col">Nome</th>
+        <th scope="col">Departamento</th>
         <th scope="col">Habilitação</th>
         <th scope="col">Lucro</th>
         <th scope="col">Equipamentos</th>
@@ -16,6 +17,7 @@
       <tr *ngFor = "let representante of representantes">
         <th scope="col">{{representante.id}} </th>
         <td scope="col">{{representante.primeiro_nome}} </td>
+        <td scope="col">{{representante.departamento}} </td>
         <td scope="col">{{representante.habilitacao}} </td>
         <td scope="col">{{representante.lucro}} </td>
         <td scope="col">{{representante.equipamentos}} </td>

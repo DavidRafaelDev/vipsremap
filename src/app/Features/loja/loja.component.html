@@ -1,7 +1,12 @@
+
 <div class="dashboard-container">
     <app-menu></app-menu>
-
+   
   <div class="loja-content">
+    <div>
+      <button type="submit" (click)="openModal()"  class="btn btn btn-warning" id="adcproduto">Adicionar Produto na Loja +</button>
+   </div>
+
   <table class="table table-striped">
     <thead>
       <tr>
@@ -16,11 +21,11 @@
     <tbody>
       <tr *ngFor = "let loja of lojas">
         <th scope="col">{{loja.id}} </th>
-        <td scope="col">{{loja.Pedal}} </td>
-        <td scope="col">{{loja.Downpipe}} </td>
-        <td scope="col">{{loja.Filtro}} </td>
-        <td scope="col">{{loja.Cabos}} </td>
-        <td scope="col">{{loja.Outros}} </td>
+        <td scope="col">{{loja.pedal}} </td>
+        <td scope="col">{{loja.downpipe}} </td>
+        <td scope="col">{{loja.filtro}} </td>
+        <td scope="col">{{loja.cabo}} </td>
+        <td scope="col">{{loja.outros}} </td>
       </tr>
   
     </tbody>
