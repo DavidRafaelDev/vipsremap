@@ -54,4 +54,7 @@ pesquisarCliente(nome_completo: string) : Observable<any>{
 adicionarRepresentante(representantes: any): Observable <any> {
   return this.http.post(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes`, representantes)
 }
+PesquisarVeiculo( placa: any) : Observable<any>{
+  return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/veiculos?placa=${placa}`)
+}
 }
