@@ -5,7 +5,7 @@
 
 .deashboard-header{
     display: flex;
-    border: 1px solid white;
+    border: 1px solid black;
     width:80%;
     height: 10vh;
     margin: 5vh;
@@ -19,13 +19,26 @@
     align-items: center;
     flex-direction: column;
 }
-
+.txtcliente{
+    font-size: 25px ;
+}
 .cliente-content{
     width: 98%;
+}
+#pesquisabotao{
+    width: 15em;
+    float: right;
+    border-radius: 4px;
+  
+    margin-top: 15px;
+    height: 35px;
+    box-sizing: none;
+
 }
 #adccliente{
     color: rgb(255, 255, 255);
     background-color: #3a3939;
-    float: right;
     margin: 10px 20px;
+    float: right;
+    height: 40px;
 }

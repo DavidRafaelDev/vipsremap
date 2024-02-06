@@ -1,0 +1,39 @@
+<div class="modal-adicionar-representante-container">
+
+    <div class="modal-adicionar-representante-header">
+
+        <h1>Adicionar Representante</h1>
+        <h3 class="close-modal" (click)="handleCloseModal()">X</h3>
+    </div>
+    <form (ngSubmit)="adicionarRepresentante()">
+        <div class="form-group">
+            <label for="id">Código</label>
+            <input type="text" id="id" name="id" [(ngModel)]="representantes.id" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="primeiro_nome">Nome</label>
+            <input type="text" id="primeiro_nome" name="primeiro_nome" [(ngModel)]="representantes.primeiro_nome" class=" form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="departamento">Departamento</label>
+            <input type="text" id="departamento" name="departamento" [(ngModel)]="representantes.departamento" class=" form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="habilitacao">Habilitação</label>
+            <input type="text" id="habilitacao" name="habilitacao" [(ngModel)]="representantes.habilitacao" class=" form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="lucro">Lucro</label>
+            <input type="text" id="lucro" name="lucro" [(ngModel)]="representantes.lucro" class=" form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="equipamentos">Equipamento</label>
+            <input type="text" id="equipamentos" name="equipamentos" [(ngModel)]="representantes.equipamentos" class=" form-control" required>
+        </div>
+           <div class="btn-adicionar-representante">
+           <button type="submit" class="btn btn-primary">Adicionar Representante</button>
+        </div>
+          
+        </form>
+    </div>

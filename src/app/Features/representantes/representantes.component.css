@@ -25,3 +25,20 @@
 .representante-content{
     width: 98%;
 }
+#pesquisabotao{
+    width: 15em;
+    float: right;
+    border-radius: 4px;
+  
+    margin-top: 15px;
+    height: 35px;
+    box-sizing: none;
+
+}
+#adcRepresentante{
+    color: rgb(255, 255, 255);
+    background-color: #3a3939;
+    margin: 10px 20px;
+    float: right;
+    height: 40px;
+}

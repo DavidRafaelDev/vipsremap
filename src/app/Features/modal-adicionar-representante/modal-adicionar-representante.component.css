@@ -1,0 +1,32 @@
+.modal-adicionar-representante-container{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 2vh;
+}
+.modal-adicionar-representante-header{
+    padding: 2vh;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.close-modal{
+    cursor: pointer;
+}
+.btn-adicionar-representante{
+    display: flex;
+    justify-content: center;
+    margin-top: 4vh;
+}
+input{
+    margin: 1vh;
+}
+select{
+    margin: 1vh;
+}
+button{
+    align-items: center;
+    width: 90%;
+    background-color: #3a3939;
+    color: white;
+}

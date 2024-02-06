@@ -45,5 +45,13 @@ adicionarprodutoloja(loja: any): Observable<any> {
 login(login: string , senha: string): Observable<any>{
   return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes?primeiro_nome=${login}&senha=${senha}`)
 }
-
+pesquisarRepresentante(primeiro_nome: string) : Observable<any>{
+  return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes?primeiro_nome=${primeiro_nome}`)
+}
+pesquisarCliente(nome_completo: string) : Observable<any>{
+  return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/clientes?nome_completo=${nome_completo}`)
+}
+adicionarRepresentante(representantes: any): Observable <any> {
+  return this.http.post(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes`, representantes)
+}
 }
