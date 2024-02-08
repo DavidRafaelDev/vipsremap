@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from 'src/app/shared/services/app-service.service';
 import { ModalAdicionarClienteComponent } from '../modal-adicionar-cliente/modal-adicionar-cliente-component';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clientes',
@@ -10,28 +11,42 @@ import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstra
 })
 export class ClientesComponent implements OnInit {
 
-    clientes: any[] = [];
-    
-    constructor(private service: AppServiceService, private modalService:NgbModal){
-    }
-      ngOnInit(): void {
-      this.getClientes();
-      }
-    getClientes(){
-      this.service.getClientes().subscribe((result:any)=>{
+  clientes: any[] = [];
+  inputValue: string = "";
+
+  constructor(private service: AppServiceService, private modalService: NgbModal, private route: Router) {
+  }
+
+  ngOnInit(): void {
+    this.getClientes();
+  }
+  getClientes() {
+    this.service.getClientes().subscribe((result: any) => {
       this.clientes = result
       console.log(result)
+    })
+  }
+
+  handlePesquisar() {
+    if (this.inputValue === "") {
+      this.getClientes()
+    } else {
+      console.log(this.inputValue);
+      this.service.pesquisarCliente(this.inputValue).subscribe((result: any) => {
+        this.clientes = result
       })
     }
-    openModal() {
+  }
+  openModal() {
     const modalRef = this.modalService.open(ModalAdicionarClienteComponent, { size: 'lg' });
-    modalRef.result.then(()=>{
+    modalRef.result.then(() => {
       this.getClientes();
-      })    
-    }}  
-    
-    
-    
+    })
+  }
+}
+
+
+
 
 
 
