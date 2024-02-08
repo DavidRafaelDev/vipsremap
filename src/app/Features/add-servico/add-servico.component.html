@@ -4,63 +4,141 @@
         <!-- formulario.component.html -->
         <div class="container mt-4">
             <h2>Formulário</h2>
+     
+            <div id="geral">
             <form (ngSubmit)="onSubmit()">
+                
                 <div class="form-group">
-                    <label for="cliente">Cliente:</label>
-                    <input type="text" class="form-control" id="cliente" [(ngModel)]="novoServico.cliente"
+                    <div class="form-group">
+                        <label for="representante"></label>
+                        <input type="text" class="form-control" placeholder="Representante" id="representante"
+                            [(ngModel)]="novoServico.representante" name="representante" required>
+                    </div>
+                    <label for="cliente"></label>
+                    <input type="text" class="form-control" placeholder="Cliente" id="cliente" [(ngModel)]="novoServico.cliente"
                         name="cliente" required>
                 </div>
+                <form>
+                    <label for="veiculo"></label>
+                    <select class="form-control">
+                        <input type="text" class="form-control" id="veiculo" [(ngModel)]="novoServico.veiculo"
+                            name="veiculo" required>
+                        <option>Selecione o Veiculo</option>
+                        <option>Carro 1</option>
+                        <option>Carro 2</option>
+                    </select>
+                </form>
+                <form>
+                    <label for="servicos"></label>
+                    <select class="form-control">
+                        <input type="text" class="form-control" placeholder="Servico" id="servico" [(ngModel)]="novoServico.servico"
+                            name="servico" required>
 
-                <div class="form-group">
-                    <label for="veiculo">Veículo:</label>
+                        <option>Selecione o Serviço</option>
+                        <option>Dpf e Egr Off</option>
+                        <option>Dpf, Egr e bomba off</option>
+                        <option>Dpf, Egr, bomba e arla off</option>
+                        <option>Stage 1</option>
+                        <option>Stage 1 full</option>
+                        <option>Stage 2</option>
+                        <option>Stage rally/option>
+                        <option>Potência</option>
+                        <option>Potência e Arla</option>
+                        <option>Mapa Original</option>
+                    </select>
+                </form>
+
+                <!--
+                <div class="form-group">  
                     <input type="text" class="form-control" id="veiculo" [(ngModel)]="novoServico.veiculo"
                         name="veiculo" required>
                 </div>
+               
 
                 <div class="form-group">
-                    <label for="veiculo">Serviço:</label>
-                    <input type="text" class="form-control" id="servico" [(ngModel)]="novoServico.servico" name="servico" required>
+                    <label for="servico">Serviço</label>
+                    <input type="text" class="form-control" id="servico" [(ngModel)]="novoServico.servico"
+                        name="servico" required>
+                </div>
+ --->
+                <form>
+                    <label for="equipamento"></label>
+                    <select class="form-control">
+                        <input type="text" class="form-control"  placeholder="Equipamento" id="equipamento" [(ngModel)]="novoServico.equipamento"
+                            name="equipamento" required>
+                        <option>Selecione o Equipamento</option>
+                        <option>Genius </option>
+                        <option>Trasdata</option>
+                        <option>Kzprog</option>
+                        <option>Inline</option>
+                    </select>
+                </form>
+                <!--
+                <div class="form-group">
+                    <label for="equipamento">Equipamento</label>
+                    <input type="text" class="form-control" id="equipamento" name="equipamento" required>
+                </div>
+                 --->
+
+                <form>
+                    <label for="veiculo"></label>
+                    <select class="form-control">
+                        <input type="text" class="form-control" placeholder="Garantia" id="garantia" [(ngModel)]="novoServico.veiculo"
+                            name="veiculo" required>
+                        <option>Selecione a opção</option>
+                        <option>Sim</option>
+                        <option>Não</option>
+                    </select>
+                </form>
+                <!--
+                <div class="form-group">
+                    <label for="equipamento">Garantia</label>
+                    <input type="text" class="form-control" id="equipamento" name="equipamento" required>
+                </div>
+                --->
+                <div class="form-group">
+                    <label for="equipamento"></label>
+                    <input type="text" class="form-control"  placeholder="Acessórios" id="equipamento" name="equipamento" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="representante">Representante:</label>
-                    <input type="text" class="form-control" id="representante"
-                        [(ngModel)]="novoServico.representante" name="representante" required>
+                    <label for="TME"></label>
+                    <input type="text" class="form-control" id="TME" placeholder="TME" [(ngModel)]="novoServico.TME" name="TME" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="TME">TME:</label>
-                    <input type="text" class="form-control" id="TME" [(ngModel)]="novoServico.TME" name="TME"
+                    <label for="custo"></label>
+                    <input type="text" class="form-control"  placeholder="Valor / Custo" id="custo" [(ngModel)]="novoServico.custo" name="custo"
                         required>
                 </div>
 
                 <div class="form-group">
-                    <label for="custo">Custo:</label>
-                    <input type="text" class="form-control" id="custo" [(ngModel)]="novoServico.custo" name="custo"
+                    <label for="pedido"></label>
+                    <input type="text" class="form-control" placeholder="Pedido"  id="pedido"  [(ngModel)]="novoServico.pedido" name="pedido"
                         required>
                 </div>
 
                 <div class="form-group">
-                    <label for="pedido">Pedido:</label>
-                    <input type="text" class="form-control" id="pedido" [(ngModel)]="novoServico.pedido"
-                        name="pedido" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="envio">Envio:</label>
-                    <input type="text" class="form-control" id="envio" [(ngModel)]="novoServico.envio" name="envio"
+                    <label for="envio"></label>
+                    <input type="text" class="form-control" placeholder="Envio" id="envio" [(ngModel)]="novoServico.envio" name="envio"
                         required>
                 </div>
 
                 <div class="form-group">
-                    <label for="finalizacao">Finalização:</label>
+                    <label for="equipamento"></label>
+                    <input type="text" class="form-control" placeholder="Observações" id="equipamento" name="equipamento" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="finalizacao">Finalização</label>
                     <input type="text" class="form-control" id="finalizacao" [(ngModel)]="novoServico.finalizacao"
                         name="finalizacao" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-              
+                <button type="submit" class="btn btn-primary" id="botaoenviar">Enviar</button>
+
             </form>
         </div>
     </div>
-  
+</div>
+
 </div>
