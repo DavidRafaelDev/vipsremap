@@ -1,48 +1,34 @@
-.dashboard-container{
+.add-servico-container{
     display: flex;
     flex-direction: row;
 }
 
-.deashboard-header{
-    display: flex;
-    border: 1px solid black;
-    width:80%;
-    height: 10vh;
-    margin: 5vh;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2vh;
-}
-.dashboard-content{
+.add-servico-content{
     display: flex;
     width: 100%;
     align-items: center;
     flex-direction: column;
 }
-h2{
-    color: black;
-    text-align: center;
-}
 
-form-group,label{
-    margin: 10px;
-    font-size: 15px;  
-}
-form , option, input{
-    margin: 10px;
-    font-size: 15px;    
-}
-
-.form-control{
-    width: 20rem;
-}
 #geral{
     display: flex;
-    border: 1px solid red;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-   
+    width: 150vh;
+    background: #80808017;
+    padding: 5vh;
+    border-radius: 20px;
+    box-shadow: 5px 10px 5px 10px #888888;
+}
+
+.form-container{
+    display:flex;
+    flex-direction: row;
+}
+
+.form-side{
+    padding: 5vh;
 }
 
 #botaoenviar{
@@ -53,4 +39,20 @@ form , option, input{
     margin-left: 15%;
     background-color: #3a3939;
     border: none;
+}
+
+
+.form-group{
+    margin: 2vh;
+}
+.date-control{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+h2{
+    color: black;
+    text-align: center;
 }

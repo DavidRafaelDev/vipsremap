@@ -7,28 +7,30 @@ import { DashboardComponent } from './Features/dashboard/dashboard.component';
 import { LoginComponent } from './Features/login/login.component';
 import { MenuComponent } from './Core/menu/menu.component';
 import { AddServicoComponent } from './Features/add-servico/add-servico.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RepresentantesComponent } from './Features/representantes/representantes.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ServicosComponent } from './Features/serviços/servicos.component';
 import { UserService } from './Features/user/user.service';
-import {ClientesComponent }from './Features/clientes/clientes.component';
-import {VeiculosComponent} from './Features/veiculos/veiculos.component';
-import {LojaComponent} from './Features/loja/loja.component'
+import { ClientesComponent } from './Features/clientes/clientes.component';
+import { VeiculosComponent } from './Features/veiculos/veiculos.component';
+import { LojaComponent } from './Features/loja/loja.component'
 import { ModalAdicionarVeiculoComponent } from './Features/modal-adicionar-veiculo/modal-adicionar-veiculo.component';
 import { ModalAdicionarClienteComponent } from './Features/modal-adicionar-cliente/modal-adicionar-cliente-component';
-import {ModalAdicionarLojaComponent} from './Features/modal-adicionar-produtoloja/modal-adicionar-produtoloja.component'
+import { ModalAdicionarLojaComponent } from './Features/modal-adicionar-produtoloja/modal-adicionar-produtoloja.component'
 import { ModalAdicionarRepresentanteComponent } from './Features/modal-adicionar-representante/modal-adicionar-representante.component';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: DashboardComponent },
   { path: 'servico', component: AddServicoComponent },
   { path: 'representantes', component: RepresentantesComponent },
-  { path: 'servicos', component: ServicosComponent},
-  { path: 'clientes', component: ClientesComponent},
-  { path: 'veiculos', component: VeiculosComponent},
-  { path: 'loja' , component: LojaComponent},
+  { path: 'servicos', component: ServicosComponent },
+  { path: 'clientes', component: ClientesComponent },
+  { path: 'veiculos', component: VeiculosComponent },
+  { path: 'loja', component: LojaComponent },
 ];
 
 @NgModule({
@@ -46,19 +48,21 @@ const routes: Routes = [
     ModalAdicionarVeiculoComponent,
     ModalAdicionarClienteComponent,
     ModalAdicionarLojaComponent,
-    ModalAdicionarRepresentanteComponent
+    ModalAdicionarRepresentanteComponent,
 
   ],
   imports: [
-    
+    NgxMaskDirective,
+    ReactiveFormsModule,
     BrowserModule,
     NgbModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CurrencyMaskModule
   ],
-  providers: [UserService],
-    bootstrap: [AppComponent]
+  providers: [UserService, provideNgxMask()],
+  bootstrap: [AppComponent]
 })
 
 export class AppModule { }

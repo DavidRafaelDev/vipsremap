@@ -30,15 +30,15 @@ export class VeiculosComponent implements OnInit {
     })
   }
   handlePesquisar() {
-    if(this.inputValue === ""){
+    if (this.inputValue === "") {
       this.getVeiculos()
-    }else {
+    } else {
       console.log(this.inputValue);
-      this.service.PesquisarVeiculo(this.inputValue).subscribe((result: any) => {
+      this.service.pesquisarVeiculo(this.inputValue).subscribe((result: any) => {
         this.veiculos = result;
-    })
-}
-}
+      })
+    }
+  }
   openModal() {
     const modalRef = this.modalService.open(ModalAdicionarVeiculoComponent, { size: 'lg' });
     modalRef.result.then(() => {

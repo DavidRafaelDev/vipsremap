@@ -6,7 +6,7 @@ img{
     padding: 2vh;
 }
 p{
-    cursor: ponter;
+    cursor: pointer;
 }
 .menu-container{
     background: lightGray;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from 'src/app/shared/services/app-service.service';
 
 @Component({
@@ -6,28 +6,41 @@ import { AppServiceService } from 'src/app/shared/services/app-service.service';
   templateUrl: './add-servico.component.html',
   styleUrls: ['./add-servico.component.css']
 })
-export class AddServicoComponent {
+export class AddServicoComponent implements OnInit {
 
   constructor(private appService: AppServiceService) { }
-
   novoServico: any = {}
+  representantesName: string[] = []
+  tipoServicos = ['Dpf e Egr Off', 'Dpf, Egr e bomba off', 'Dpf, Egr, bomba e arla off', 'Stage 1', 'Stage 2', 'Stage rally', 'Potência', 'Potência e Arla', 'Mapa Original']
+  equipamentos = ['Genius', 'Trasdata', 'Kzprog', 'Inline']
+  acessorios = ['Pedal', 'Downpipe', 'Filtro']
+  showSuccess = false
+  showError = false
 
-  dadosFormulario = {
-    id: 1,
-    cliente: '',
-    veiculo: '',
-    servico: '',
-    representante: '',
-    TME: '',
-    custo: '',
-    pedido: '',
-    envio: '',
-    finalizacao: ''
-  };
+  ngOnInit(): void {
+
+    this.appService.getRepresentantes().subscribe((representantes) => {
+      representantes.forEach((representante: any | undefined) => {
+        if (representante.primeiro_nome != 'admin') {
+          this.representantesName.push(representante.primeiro_nome)
+        }
+      });
+    })
+  }
+
   onSubmit() {
+    console.log(this.novoServico);
     this.appService.adicionarServico(this.novoServico).subscribe(() => {
-      console.log('Serviço adicionado com sucesso!');
-      this.novoServico = {};
-    });
-   }}
+      this.novoServico = {};
+      this.showSuccess = true
+    });
+  }
+
+  closeSuccess(){
+    this.showSuccess = false;
+  }
+  closeError(){
+    this.showSuccess = false;
+  }
+}
 

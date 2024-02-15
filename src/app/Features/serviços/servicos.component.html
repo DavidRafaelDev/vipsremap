@@ -1,6 +1,5 @@
 <div class="dashboard-container">
     <app-menu></app-menu>
-
   <div class="servico-content">
   <button (click)="addServico()" id="adicionarservico" > Adicionar </button>
   <table class="table table-striped">
@@ -11,31 +10,24 @@
         <th scope="col">Veículo</th>
         <th scope="col">Serviço</th>
         <th scope="col">Representante</th>
-       <th scope="col">TME</th>
        <th scope="col">Custo</th>
        <th scope="col">Pedido</th>
        <th scope="col">Envio</th>
        <th scope="col">Finalização</th>
-
     </tr>
     </thead>
     <tbody>
       <tr *ngFor = "let servico of servicos">
         <th scope="col">{{servico.id}} </th>
-        <td scope="col">{{servico.cliente}} </td>
-        <td scope="col">{{servico.veiculo}} </td>
-        <td scope="col">{{servico.servico}} </td>
+        <td scope="col">{{servico.clienteCpf}} </td>
+        <td scope="col">{{servico.veiculoPlaca}} </td>
+        <td scope="col">{{servico.tipoServico}} </td>
         <td scope="col">{{servico.representante}} </td>
-        <td scope="col">{{servico.TME}} </td>
-        <td scope="col">{{servico.custo}} </td>
-        <td scope="col">{{servico.pedido}} </td>
-        <td scope="col">{{servico.envio}} </td>
-        <td scope="col">{{servico.finalizacao}} </td>
-    
-
+        <td scope="col">{{servico.preco}} </td>
+        <td scope="col">{{handleDate(servico.horaPedido)}} </td>
+        <td scope="col">{{handleDate(servico.horaEnvio)}} </td>
+        <td scope="col">{{handleDate(servico.horaFinalizacao)}} </td>
       </tr>
-  
     </tbody>
   </table>
-
 </div>

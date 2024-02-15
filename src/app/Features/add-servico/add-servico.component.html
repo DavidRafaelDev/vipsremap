@@ -1,144 +1,112 @@
-<div class="dashboard-container">
+<div class="add-servico-container">
     <app-menu></app-menu>
-    <div class="dashboard-content">
-        <!-- formulario.component.html -->
-        <div class="container mt-4">
-            <h2>Formulário</h2>
-     
-            <div id="geral">
-            <form (ngSubmit)="onSubmit()">
-                
-                <div class="form-group">
-                    <div class="form-group">
-                        <label for="representante"></label>
-                        <input type="text" class="form-control" placeholder="Representante" id="representante"
-                            [(ngModel)]="novoServico.representante" name="representante" required>
+    <div class="add-servico-content">
+        <h2>ADICIONAR SERVIÇOS</h2>
+        <div id="geral">
+            <form>
+                <div class="form-container">
+                    <div class="form-side">
+                        <div class="form-group">
+                            <label for="representante">Representante</label>
+                            <select class="form-control" [(ngModel)]="novoServico.representante" name="representante">
+                                <option value="" disabled selected>Seleciona representante</option>
+                                <option *ngFor="let representante of representantesName" value="{{representante}}">
+                                    {{representante}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="veiculo">Cliente</label>
+                            <input autofocus class="form-control" inputmode="numeric" mask="000.000.000-00"
+                                placeholder="CPF" type="text" [(ngModel)]="novoServico.clienteCpf" name="cpf">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="veiculo">Veiculo</label>
+                            <input class="form-control" placeholder="Digite a placa do veiculo" type="text"
+                                [(ngModel)]="novoServico.veiculoPlaca" name="veiculo">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="servicos">Tipo de Serviço</label>
+                            <select class="form-control"  [(ngModel)]="novoServico.tipoServico" name="tipoServico">
+                                <option value="" disabled selected>Selecione o Serviço</option>
+                                <option *ngFor="let servico of tipoServicos" value="{{servico}}">
+                                    {{servico}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="equipamento">Equipamento</label>
+                            <select class="form-control"  [(ngModel)]="novoServico.equipamento" name="equipamento">
+                                <option value="" disabled selected>Selecione o Equipamento</option>
+                                <option *ngFor="let equipamento of equipamentos" value="{{equipamento}}">
+                                    {{equipamento}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="garantia">Garantia</label>
+                            <select class="form-control"  [(ngModel)]="novoServico.garantia" name="garantia">
+                                <option value="" selected disabled>Selecione a opção</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                            </select>
+                        </div>
                     </div>
-                    <label for="cliente"></label>
-                    <input type="text" class="form-control" placeholder="Cliente" id="cliente" [(ngModel)]="novoServico.cliente"
-                        name="cliente" required>
-                </div>
-                <form>
-                    <label for="veiculo"></label>
-                    <select class="form-control">
-                        <input type="text" class="form-control" id="veiculo" [(ngModel)]="novoServico.veiculo"
-                            name="veiculo" required>
-                        <option>Selecione o Veiculo</option>
-                        <option>Carro 1</option>
-                        <option>Carro 2</option>
-                    </select>
-                </form>
-                <form>
-                    <label for="servicos"></label>
-                    <select class="form-control">
-                        <input type="text" class="form-control" placeholder="Servico" id="servico" [(ngModel)]="novoServico.servico"
-                            name="servico" required>
+                    <div class="form-side">
+                        <div class="form-group">
+                            <label for="acessorios">Acessórios</label>
+                            <select class="form-control"  [(ngModel)]="novoServico.acessorios" name="equipamento">
+                                <option value="" selected disabled>Selecione o equipamento</option>
+                                <option *ngFor="let acessorio of acessorios" value="{{acessorio}}">
+                                    {{acessorio}}
+                                </option>
+                            </select>
+                        </div>
 
-                        <option>Selecione o Serviço</option>
-                        <option>Dpf e Egr Off</option>
-                        <option>Dpf, Egr e bomba off</option>
-                        <option>Dpf, Egr, bomba e arla off</option>
-                        <option>Stage 1</option>
-                        <option>Stage 1 full</option>
-                        <option>Stage 2</option>
-                        <option>Stage rally/option>
-                        <option>Potência</option>
-                        <option>Potência e Arla</option>
-                        <option>Mapa Original</option>
-                    </select>
-                </form>
+                        <div class="form-group">
+                            <label for="horaPedido">Hora do pedido</label>
+                            <input type="datetime-local" class="form-control"  [(ngModel)]="novoServico.horaPedido" name="horaPedido">
+                        </div>
 
-                <!--
-                <div class="form-group">  
-                    <input type="text" class="form-control" id="veiculo" [(ngModel)]="novoServico.veiculo"
-                        name="veiculo" required>
-                </div>
-               
+                        <div class="form-group">
+                            <label for="horaEnvio">Hora do envio</label>
+                            <input type="datetime-local" class="form-control"  [(ngModel)]="novoServico.horaEnvio" name="horaEnvio">
+                        </div>
 
-                <div class="form-group">
-                    <label for="servico">Serviço</label>
-                    <input type="text" class="form-control" id="servico" [(ngModel)]="novoServico.servico"
-                        name="servico" required>
-                </div>
- --->
-                <form>
-                    <label for="equipamento"></label>
-                    <select class="form-control">
-                        <input type="text" class="form-control"  placeholder="Equipamento" id="equipamento" [(ngModel)]="novoServico.equipamento"
-                            name="equipamento" required>
-                        <option>Selecione o Equipamento</option>
-                        <option>Genius </option>
-                        <option>Trasdata</option>
-                        <option>Kzprog</option>
-                        <option>Inline</option>
-                    </select>
-                </form>
-                <!--
-                <div class="form-group">
-                    <label for="equipamento">Equipamento</label>
-                    <input type="text" class="form-control" id="equipamento" name="equipamento" required>
-                </div>
-                 --->
+                        <div class="form-group">
+                            <label for="horaFinalizacao">Hora da finalização</label>
+                            <input type="datetime-local" class="form-control"  [(ngModel)]="novoServico.horaFinalizacao" name="horaFinalizacao">
+                        </div>
 
-                <form>
-                    <label for="veiculo"></label>
-                    <select class="form-control">
-                        <input type="text" class="form-control" placeholder="Garantia" id="garantia" [(ngModel)]="novoServico.veiculo"
-                            name="veiculo" required>
-                        <option>Selecione a opção</option>
-                        <option>Sim</option>
-                        <option>Não</option>
-                    </select>
-                </form>
-                <!--
-                <div class="form-group">
-                    <label for="equipamento">Garantia</label>
-                    <input type="text" class="form-control" id="equipamento" name="equipamento" required>
-                </div>
-                --->
-                <div class="form-group">
-                    <label for="equipamento"></label>
-                    <input type="text" class="form-control"  placeholder="Acessórios" id="equipamento" name="equipamento" required>
-                </div>
+                        <div class="form-group">
+                            <label for="custo">Custo</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            [(ngModel)]="novoServico.preco"
+                            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
+                            currencyMask
+                            required
+                            name="custo"
+                            />
+                        </div>
 
-                <div class="form-group">
-                    <label for="TME"></label>
-                    <input type="text" class="form-control" id="TME" placeholder="TME" [(ngModel)]="novoServico.TME" name="TME" required>
+                        <div class="form-group">
+                            <label for="equipamento">Observações</label>
+                            <textarea class="form-control" aria-label="With textarea" [(ngModel)]="novoServico.observacao"
+                                placeholder="Observações" name="observacao"></textarea>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="custo"></label>
-                    <input type="text" class="form-control"  placeholder="Valor / Custo" id="custo" [(ngModel)]="novoServico.custo" name="custo"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="pedido"></label>
-                    <input type="text" class="form-control" placeholder="Pedido"  id="pedido"  [(ngModel)]="novoServico.pedido" name="pedido"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="envio"></label>
-                    <input type="text" class="form-control" placeholder="Envio" id="envio" [(ngModel)]="novoServico.envio" name="envio"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="equipamento"></label>
-                    <input type="text" class="form-control" placeholder="Observações" id="equipamento" name="equipamento" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="finalizacao">Finalização</label>
-                    <input type="text" class="form-control" id="finalizacao" [(ngModel)]="novoServico.finalizacao"
-                        name="finalizacao" required>
-                </div>
-                <button type="submit" class="btn btn-primary" id="botaoenviar">Enviar</button>
-
+                <ngb-alert type="success" (closed)="closeSuccess()" *ngIf="showSuccess" >Serviço adicionado com sucesso</ngb-alert>
+                <ngb-alert type="danger" *ngIf="showError" (closed)="closeError()">Serviço adicionado com sucesso</ngb-alert>
+                <button type="submit" class="btn btn-primary" id="botaoenviar" (click)="onSubmit()">Enviar</button>
             </form>
+
         </div>
     </div>
-</div>
-
 </div>
