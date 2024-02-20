@@ -1,44 +1,61 @@
-.dashboard-container{
+.dashboard-container {
     display: flex;
     flex-direction: row;
 }
 
-.deashboard-header{
+.deashboard-header {
     display: flex;
     border: 1px solid black;
-    width:80%;
+    width: 80%;
     height: 10vh;
     margin: 5vh;
     align-items: center;
     justify-content: space-between;
     padding: 2vh;
 }
-.dashboard-content{
+
+.dashboard-content {
     display: flex;
     width: 100%;
-    align-items: center;
-    flex-direction: column;
 }
-.txtrepresentante{
-    font-size: 25px ;
+
+.txtrepresentante {
+    font-size: 25px;
 }
-.representante-content{
+
+.representante-content {
     width: 98%;
+    margin-top: 2vh;
 }
-#pesquisabotao{
-    width: 15em;
-    float: right;
+
+#pesquisabotao {
     border-radius: 4px;
-  
-    margin-top: 15px;
-    height: 35px;
-    box-sizing: none;
+    width: 25vh;
+    margin-top: 0;
+    margin-left: 3vh;
 
 }
-#adcRepresentante{
-    color: rgb(255, 255, 255);
-    background-color: #3a3939;
-    margin: 10px 20px;
-    float: right;
-    height: 40px;
+
+#adcRepresentante {
+    width: 10vh;
+    height: 4vh;
+    margin: 0 0 0 10px;
+    background-color: #363636;
+    color: #eeee;
+    border-style: none;
+    border-left: 15px;
+}
+
+.topo {
+    display: flex;
+    margin-bottom: 5vh;
+}
+
+.titulorepresentante {
+    color: #9c9a9a;
+    list-style: none;
+    font-size: 2.1rem;
+    font-weight: bolder;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-bottom: 1px solid #363636 ;
 }
