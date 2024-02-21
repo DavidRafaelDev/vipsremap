@@ -49,7 +49,6 @@ const routes: Routes = [
     ModalAdicionarClienteComponent,
     ModalAdicionarLojaComponent,
     ModalAdicionarRepresentanteComponent,
-
   ],
   imports: [
     NgxMaskDirective,

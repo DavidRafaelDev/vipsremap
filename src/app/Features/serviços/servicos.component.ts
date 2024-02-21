@@ -11,6 +11,7 @@ import { DatePipe } from '@angular/common';
 })
 export class ServicosComponent implements OnInit {
 servicos: any[] = [];
+inputValue: string = "";
 
 constructor(private service: AppServiceService , private route: Router, private datePipe: DatePipe){}
 adicionarServico: any = {};
@@ -28,9 +29,21 @@ addServico() {
     this.servicos = result
     })
   }
+
+  handlePesquisar() {
+    if (this.inputValue === "") {
+      this.getServicos()
+    } else {
+      console.log(this.inputValue);
+      this.service.pesquisarRepresentante(this.inputValue).subscribe((result: any) => {
+        this.servicos = result;
+      })
+    }
+  }
   handleDate(data: Date){
     return this.datePipe.transform(data, 'dd/MM/yyyy HH:mm')
   }
+  
 
 }  
 

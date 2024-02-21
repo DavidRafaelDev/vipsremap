@@ -20,6 +20,8 @@ export class AppServiceService {
   adicionarServico(servico: any): Observable<any> {
     return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/servicos', servico);
   }
+  // pesquisarServico(id: string): Observable<any> {  return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/id?veiculo=${id}`)}
+  
   // get cliente
   getClientes(): Observable<any> {
     return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/clientes')
@@ -59,6 +61,5 @@ export class AppServiceService {
   }
   buscarRepresentante(): Observable<any> {
     return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes`)
-
   }
 }

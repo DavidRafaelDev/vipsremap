@@ -1,11 +1,20 @@
 <div class="dashboard-container">
     <app-menu></app-menu>
+
   <div class="servico-content">
+
+    <div class="topo">
+    <div>
+      <input type="text" class="form-control" placeholder="Pesquisar..." id="pesquisabotao" (change)="handlePesquisar()"
+        [(ngModel)]="inputValue">
+    </div>
   <button (click)="addServico()" id="adicionarservico" > Adicionar </button>
+  </div>
+  
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">id</th>
+        <th scope="col" >id</th>
         <th scope="col">Cliente</th>
         <th scope="col">Veículo</th>
         <th scope="col">Serviço</th>

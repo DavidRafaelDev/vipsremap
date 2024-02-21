@@ -1,8 +1,9 @@
 img {
     width: 6vh;
     display: flex;
-    align-items: center;    
+    align-items: center;
     margin-left: 7vh;
+    margin-top: 15px;
 }
 
 .menu {
@@ -14,19 +15,19 @@ p {
     cursor: pointer;
 }
 
-.user{
+.user {
     color: white;
 }
 
 .menu-container {
-    background: #202020;
+    background: #131212;
     height: 100vh;
     width: 25vh;
     color: #9c9a9a;
     list-style: none;
     font-size: 1.1rem;
     font-weight: bolder;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .menu-container {
@@ -53,13 +54,15 @@ p {
     list-style: none;
     margin-top: 2vh;
 }
-.icon{
+
+.icon {
     position: fixed;
     display: flex;
-    color: #E9F138;
-    margin-left:-4vh;
-   
+    color: #dd924c;
+    margin-left: -4vh;
+
 }
-.textolateral:hover{
+
+.textolateral:hover {
     color: #eeee;
 }
