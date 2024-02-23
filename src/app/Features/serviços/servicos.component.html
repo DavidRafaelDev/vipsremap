@@ -1,42 +1,58 @@
 <div class="dashboard-container">
-    <app-menu></app-menu>
+  <app-menu></app-menu>
 
   <div class="servico-content">
 
-    <div class="topo">
-    <div>
-      <input type="text" class="form-control" placeholder="Pesquisar..." id="pesquisabotao" (change)="handlePesquisar()"
-        [(ngModel)]="inputValue">
+    <!--  inicio topo em que irá o pesquisar-->
+
+    <div class="header">
+      <span class="textoaba">Serviços</span>
+      <div class="topo">
+        <div class="imglupa">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="40" fill="currentColor" class="bi bi-search"
+            viewBox="0 6 16 17">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+        </div>
+        <div class="pesquisabotao">
+          <input type="text" class="form-control" placeholder="Pesquisar..." (change)="handlePesquisar()"
+            [(ngModel)]="inputValue">
+        </div>
+      </div>
     </div>
-  <button (click)="addServico()" id="adicionarservico" > Adicionar </button>
-  </div>
-  
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col" >id</th>
-        <th scope="col">Cliente</th>
-        <th scope="col">Veículo</th>
-        <th scope="col">Serviço</th>
-        <th scope="col">Representante</th>
-       <th scope="col">Custo</th>
-       <th scope="col">Pedido</th>
-       <th scope="col">Envio</th>
-       <th scope="col">Finalização</th>
+
+<div class="tabelaservico">
+<div class="topoadc">
+  <button (click)="addServico()" id="adicionarservico"> Adicionar </button>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Veículo</th>
+      <th scope="col">Serviço</th>
+      <th scope="col">Representante</th>
+      <th scope="col">Custo</th>
+      <th scope="col">Pedido</th>
+      <th scope="col">Envio</th>
+      <th scope="col">Finalização</th>
     </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor = "let servico of servicos">
-        <th scope="col">{{servico.id}} </th>
-        <td scope="col">{{servico.clienteCpf}} </td>
-        <td scope="col">{{servico.veiculoPlaca}} </td>
-        <td scope="col">{{servico.tipoServico}} </td>
-        <td scope="col">{{servico.representante}} </td>
-        <td scope="col">{{servico.preco}} </td>
-        <td scope="col">{{handleDate(servico.horaPedido)}} </td>
-        <td scope="col">{{handleDate(servico.horaEnvio)}} </td>
-        <td scope="col">{{handleDate(servico.horaFinalizacao)}} </td>
-      </tr>
-    </tbody>
-  </table>
+  </thead>
+  <tbody>
+    <tr *ngFor="let servico of servicos">
+      <th scope="col">{{servico.id}} </th>
+      <td scope="col">{{servico.clienteCpf}} </td>
+      <td scope="col">{{servico.veiculoPlaca}} </td>
+      <td scope="col">{{servico.tipoServico}} </td>
+      <td scope="col">{{servico.representante}} </td>
+      <td scope="col">{{servico.preco}} </td>
+      <td scope="col">{{handleDate(servico.horaPedido)}} </td>
+      <td scope="col">{{handleDate(servico.horaEnvio)}} </td>
+      <td scope="col">{{handleDate(servico.horaFinalizacao)}} </td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
