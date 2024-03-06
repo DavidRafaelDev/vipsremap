@@ -1,6 +1,7 @@
 .add-servico-container{
     display: flex;
     flex-direction: row;
+    background-color: rgb(221, 205, 112);
 }
 
 .add-servico-content{

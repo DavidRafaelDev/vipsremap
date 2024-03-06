@@ -26,7 +26,9 @@ export class ClientesComponent implements OnInit {
       console.log(result)
     })
   }
-
+  addCliente() {
+    this.route.navigate(["/", "clientes"])
+  }
   handlePesquisar() {
     if (this.inputValue === "") {
       this.getClientes()
@@ -42,6 +44,11 @@ export class ClientesComponent implements OnInit {
     modalRef.result.then(() => {
       this.getClientes();
     })
+  }
+  removeHandler(id: number) {
+    this.service.excluirServico(id).subscribe({
+      next: () => this.getClientes()
+    });
   }
 }
 

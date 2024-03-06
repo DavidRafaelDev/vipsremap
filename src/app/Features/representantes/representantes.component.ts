@@ -14,11 +14,11 @@ export class RepresentantesComponent implements OnInit {
   representantes: any[] = [];
   inputValue: string = "";
 
-  constructor(private service: AppServiceService,private route: Router , private modalService:NgbModal ) {
+  constructor(private service: AppServiceService, private route: Router, private modalService: NgbModal) {
   }
   ngOnInit(): void {
     this.getRepresentantes();
-  }  
+  }
   getRepresentantes() {
     this.service.getRepresentantes().subscribe((result: any) => {
       this.representantes = result
@@ -37,10 +37,17 @@ export class RepresentantesComponent implements OnInit {
   }
   openModal() {
     const modalRef = this.modalService.open(ModalAdicionarRepresentanteComponent, { size: 'lg' });
-    modalRef.result.then(()=>{
+    modalRef.result.then(() => {
 
       this.getRepresentantes();
 
-     })
-    }
+    })
   }
+
+  removeHandler(id: number) {
+    this.service.excluirServico(id).subscribe({
+      next: () => this.getRepresentantes()
+    });
+  }
+
+}
