@@ -10,24 +10,24 @@ import { DatePipe } from '@angular/common';
   providers: [DatePipe]
 })
 export class ServicosComponent implements OnInit {
-servicos: any[] = [];
-inputValue: string = "";
+  servicos: any[] = [];
+  inputValue: string = "";
   produtoService: any;
 
-constructor(private service: AppServiceService , private route: Router, private datePipe: DatePipe){}
-adicionarServico: any = {};
+  constructor(private service: AppServiceService, private route: Router, private datePipe: DatePipe) { }
+  adicionarServico: any = {};
 
   ngOnInit(): void {
-  this.getServicos();
-}
+    this.getServicos();
+  }
 
-addServico() {
-  this.route.navigate(["/", "servico"])
-}
+  addServico() {
+    this.route.navigate(["/", "servico"])
+  }
 
-  getServicos(){
-    this.service.getServicos().subscribe((result:any)=>{
-    this.servicos = result
+  getServicos() {
+    this.service.getServicos().subscribe((result: any) => {
+      this.servicos = result
     })
   }
 
@@ -41,16 +41,17 @@ addServico() {
       })
     }
   }
-  handleDate(data: Date){
+  handleDate(data: Date) {
     return this.datePipe.transform(data, 'dd/MM/yyyy HH:mm')
   }
+  
   removeHandler(id: number) {
-    this.service.excluirServico(id).subscribe({
+     this.service.excluirServico(id).subscribe({
       next: () => this.getServicos()
     });
   }
 
-}  
+}
 
 
 

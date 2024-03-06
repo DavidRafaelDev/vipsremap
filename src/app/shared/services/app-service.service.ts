@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class AppServiceService {
 
   constructor(private http: HttpClient) { }
@@ -19,10 +21,11 @@ export class AppServiceService {
   adicionarServico(servico: any): Observable<any> {
     return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/servicos', servico);
   }
-  
+
   excluirServico(id:number):Observable<any> {
-    return this.http.delete('https://vipremap-2640a0fa50a5.herokuapp.com/servico${id}');
+    return this.http.delete(`https://vipremap-2640a0fa50a5.herokuapp.com/servicos?id=${id}`);
   }
+  
   // pesquisarServico(id: string): Observable<any> {  return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/id?veiculo=${id}`)}
   
   // get cliente
