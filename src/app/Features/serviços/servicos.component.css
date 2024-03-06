@@ -10,9 +10,6 @@
         margin: 3vh;
         font-weight: bold; 
 }
-.topoadc{
-    float: right;
-}
 
 .dashboard-container {
     display: flex;
@@ -101,6 +98,10 @@
     background-color: white;
     border-radius: 10px;
 }
+.tabelaservico button{
+    float: right;
+}
+
 .titulo{
     color: rgb(90, 90, 89);
 }

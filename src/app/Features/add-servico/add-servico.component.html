@@ -1,9 +1,16 @@
 <div class="add-servico-container">
     <app-menu></app-menu>
     <div class="add-servico-content">
-        <h2>ADICIONAR SERVIÇOS</h2>
+
+        <div class="header">
+
+        </div>
+
         <div id="geral">
             <form>
+                  <div class="titulo">
+                <h2>Adicionar Serviços</h2>
+            </div>
                 <div class="form-container">
                     <div class="form-side">
                         <div class="form-group">
@@ -30,7 +37,7 @@
 
                         <div class="form-group">
                             <label for="servicos">Tipo de Serviço</label>
-                            <select class="form-control"  [(ngModel)]="novoServico.tipoServico" name="tipoServico">
+                            <select class="form-control" [(ngModel)]="novoServico.tipoServico" name="tipoServico">
                                 <option value="" disabled selected>Selecione o Serviço</option>
                                 <option *ngFor="let servico of tipoServicos" value="{{servico}}">
                                     {{servico}}
@@ -40,7 +47,7 @@
 
                         <div class="form-group">
                             <label for="equipamento">Equipamento</label>
-                            <select class="form-control"  [(ngModel)]="novoServico.equipamento" name="equipamento">
+                            <select class="form-control" [(ngModel)]="novoServico.equipamento" name="equipamento">
                                 <option value="" disabled selected>Selecione o Equipamento</option>
                                 <option *ngFor="let equipamento of equipamentos" value="{{equipamento}}">
                                     {{equipamento}}
@@ -49,7 +56,7 @@
                         </div>
                         <div class="form-group">
                             <label for="garantia">Garantia</label>
-                            <select class="form-control"  [(ngModel)]="novoServico.garantia" name="garantia">
+                            <select class="form-control" [(ngModel)]="novoServico.garantia" name="garantia">
                                 <option value="" selected disabled>Selecione a opção</option>
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
@@ -59,7 +66,7 @@
                     <div class="form-side">
                         <div class="form-group">
                             <label for="acessorios">Acessórios</label>
-                            <select class="form-control"  [(ngModel)]="novoServico.acessorios" name="equipamento">
+                            <select class="form-control" [(ngModel)]="novoServico.acessorios" name="equipamento">
                                 <option value="" selected disabled>Selecione o equipamento</option>
                                 <option *ngFor="let acessorio of acessorios" value="{{acessorio}}">
                                     {{acessorio}}
@@ -69,41 +76,41 @@
 
                         <div class="form-group">
                             <label for="horaPedido">Hora do pedido</label>
-                            <input type="datetime-local" class="form-control"  [(ngModel)]="novoServico.horaPedido" name="horaPedido">
+                            <input type="datetime-local" class="form-control" [(ngModel)]="novoServico.horaPedido"
+                                name="horaPedido">
                         </div>
 
                         <div class="form-group">
                             <label for="horaEnvio">Hora do envio</label>
-                            <input type="datetime-local" class="form-control"  [(ngModel)]="novoServico.horaEnvio" name="horaEnvio">
+                            <input type="datetime-local" class="form-control" [(ngModel)]="novoServico.horaEnvio"
+                                name="horaEnvio">
                         </div>
 
                         <div class="form-group">
                             <label for="horaFinalizacao">Hora da finalização</label>
-                            <input type="datetime-local" class="form-control"  [(ngModel)]="novoServico.horaFinalizacao" name="horaFinalizacao">
+                            <input type="datetime-local" class="form-control" [(ngModel)]="novoServico.horaFinalizacao"
+                                name="horaFinalizacao">
                         </div>
 
                         <div class="form-group">
                             <label for="custo">Custo</label>
-                            <input
-                            type="text"
-                            class="form-control"
-                            [(ngModel)]="novoServico.preco"
-                            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
-                            currencyMask
-                            required
-                            name="custo"
-                            />
+                            <input type="text" class="form-control" [(ngModel)]="novoServico.preco"
+                                [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }" currencyMask
+                                required name="custo" />
                         </div>
 
                         <div class="form-group">
                             <label for="equipamento">Observações</label>
-                            <textarea class="form-control" aria-label="With textarea" [(ngModel)]="novoServico.observacao"
-                                placeholder="Observações" name="observacao"></textarea>
+                            <textarea class="form-control" aria-label="With textarea"
+                                [(ngModel)]="novoServico.observacao" placeholder="Observações"
+                                name="observacao"></textarea>
                         </div>
                     </div>
                 </div>
-                <ngb-alert type="success" (closed)="closeSuccess()" *ngIf="showSuccess" >Serviço adicionado com sucesso</ngb-alert>
-                <ngb-alert type="danger" *ngIf="showError" (closed)="closeError()">Serviço adicionado com sucesso</ngb-alert>
+                <ngb-alert type="success" (closed)="closeSuccess()" *ngIf="showSuccess">Serviço adicionado com
+                    sucesso</ngb-alert>
+                <ngb-alert type="danger" *ngIf="showError" (closed)="closeError()">Serviço adicionado com
+                    sucesso</ngb-alert>
                 <button type="submit" class="btn btn-primary" id="botaoenviar" (click)="onSubmit()">Enviar</button>
             </form>
 
