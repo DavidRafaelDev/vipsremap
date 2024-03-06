@@ -12,6 +12,7 @@ import { DatePipe } from '@angular/common';
 export class ServicosComponent implements OnInit {
 servicos: any[] = [];
 inputValue: string = "";
+  produtoService: any;
 
 constructor(private service: AppServiceService , private route: Router, private datePipe: DatePipe){}
 adicionarServico: any = {};
@@ -43,7 +44,11 @@ addServico() {
   handleDate(data: Date){
     return this.datePipe.transform(data, 'dd/MM/yyyy HH:mm')
   }
-  
+  removeHandler(id: number) {
+    this.service.excluirServico(id).subscribe({
+      next: () => this.getServicos()
+    });
+  }
 
 }  
 

@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class AppServiceService {
 
-
   constructor(private http: HttpClient) { }
 
   getRepresentantes(): Observable<any> {
@@ -19,6 +18,10 @@ export class AppServiceService {
   // adicionar serviço
   adicionarServico(servico: any): Observable<any> {
     return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/servicos', servico);
+  }
+  
+  excluirServico(id:number):Observable<any> {
+    return this.http.delete('https://vipremap-2640a0fa50a5.herokuapp.com/servico${id}');
   }
   // pesquisarServico(id: string): Observable<any> {  return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/id?veiculo=${id}`)}
   
@@ -61,5 +64,5 @@ export class AppServiceService {
   }
   buscarRepresentante(): Observable<any> {
     return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes`)
-  }
+  } 
 }
