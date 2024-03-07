@@ -23,7 +23,7 @@ export class AppServiceService {
   }
 
   excluirServico(id:number):Observable<any> {
-    return this.http.delete(`https://vipremap-2640a0fa50a5.herokuapp.com/servicos?id=${id}`);
+    return this.http.delete(`https://vipremap-2640a0fa50a5.herokuapp.com/servicos/${id}`);
   }
   
   // pesquisarServico(id: string): Observable<any> {  return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/id?veiculo=${id}`)}

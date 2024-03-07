@@ -46,6 +46,7 @@ export class ServicosComponent implements OnInit {
   }
   
   removeHandler(id: number) {
+    console.log('teste');
      this.service.excluirServico(id).subscribe({
       next: () => this.getServicos()
     });
