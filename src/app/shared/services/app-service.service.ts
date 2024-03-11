@@ -36,7 +36,6 @@ export class AppServiceService {
   adicionarcliente(cliente: any): Observable<any> {
     return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/clientes', cliente);
   }
-  // get cliente
   getVeiculos(): Observable<any> {
     return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/veiculos')
   }

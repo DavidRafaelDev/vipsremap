@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Chart from 'chart.js/auto';
+import { AppServiceService } from 'src/app/shared/services/app-service.service';
 
 
 @Component({
@@ -9,7 +10,10 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  constructor(private route: Router) { }
+
+  constructor(private route: Router, private service:AppServiceService ) { }
+  clientes: number = 0;
+  veiculos: number = 0;
 
   chart: any = [];
   data =  {
@@ -27,7 +31,7 @@ export class DashboardComponent implements OnInit {
       },
     ],
   };
-  ngOnInit(): void {
+  async ngOnInit() {
     this.chart = new Chart('canvas', {
       type: 'bar',
       data: this.data,
@@ -39,9 +43,26 @@ export class DashboardComponent implements OnInit {
         },
       },
     });
+    await this.getClients();
+    await this.getVeiculos();
   }
   addServico() {
     this.route.navigate(["/", "servico"])
+  }
+  getProfit(){
+    // TODO: valdiar regra para buscar lucro
+  }
+
+  async getClients(){
+    await this.service.getClientes().subscribe((result) => {
+      this.clientes = result.length;
+    });
+  }
+
+  async getVeiculos(){
+    await this.service.getVeiculos().subscribe((result) => {
+      this.veiculos = result.length;
+    })
   }
 }
 

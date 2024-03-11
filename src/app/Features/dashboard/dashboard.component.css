@@ -26,3 +26,17 @@
 #canvas{
     width: 100% ;
 }
+.cards{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.card{
+    background: lightgray;
+    width: 30vh;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    padding: 2vh;
+}
