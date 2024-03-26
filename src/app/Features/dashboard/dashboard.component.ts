@@ -50,7 +50,7 @@ export class DashboardComponent implements OnInit {
     this.route.navigate(["/", "servico"])
   }
   getProfit(){
-    // TODO: valdiar regra para buscar lucro
+    // TODO: validiar regra para buscar lucro
   }
 
   async getClients(){

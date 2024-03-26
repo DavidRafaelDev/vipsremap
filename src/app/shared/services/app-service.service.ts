@@ -14,6 +14,10 @@ export class AppServiceService {
   getRepresentantes(): Observable<any> {
     return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/representantes')
   }
+
+  excluirRepresentante(id: number): Observable<any> {
+    return this.http.delete(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes/${id}`);
+  }
   getServicos(): Observable<any> {
     return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/servicos')
   }
@@ -21,16 +25,17 @@ export class AppServiceService {
   adicionarServico(servico: any): Observable<any> {
     return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/servicos', servico);
   }
-
-  excluirServico(id:number):Observable<any> {
+  excluirServico(id: number): Observable<any> {
     return this.http.delete(`https://vipremap-2640a0fa50a5.herokuapp.com/servicos/${id}`);
   }
-  
   // pesquisarServico(id: string): Observable<any> {  return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/id?veiculo=${id}`)}
-  
+
   // get cliente
   getClientes(): Observable<any> {
     return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/clientes')
+  }
+  excluirCliente(id: number): Observable<any> {
+    return this.http.delete(`https://vipremap-2640a0fa50a5.herokuapp.com/clientes/${id}`);
   }
   // adicionar cliente
   adicionarcliente(cliente: any): Observable<any> {
@@ -43,11 +48,17 @@ export class AppServiceService {
   adicionarveiculo(veiculos: any): Observable<any> {
     return this.http.post(`https://vipremap-2640a0fa50a5.herokuapp.com/veiculos`, veiculos);
   }
+  excluirVeiculo(id:number):Observable<any>{
+    return this.http.delete (`https://vipremap-2640a0fa50a5.herokuapp.com/veiculos/${id}`);
+  }
   getLojas(): Observable<any> {
     return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/loja')
   }
   adicionarprodutoloja(loja: any): Observable<any> {
     return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/loja', loja)
+  }
+  excluirprodutoloja(id:number):Observable<any>{
+    return this.http.delete(`https://vipremap-2640a0fa50a5.herokuapp.com/loja/${id}`)
   }
   login(login: string, senha: string): Observable<any> {
     return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes?primeiro_nome=${login}&senha=${senha}`)
@@ -66,5 +77,5 @@ export class AppServiceService {
   }
   buscarRepresentante(): Observable<any> {
     return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes`)
-  } 
+  }
 }

@@ -47,9 +47,8 @@ export class VeiculosComponent implements OnInit {
 
     })
   }
- 
   removeHandler(id: number) {
-    this.service.excluirServico(id).subscribe({
+    this.service.excluirVeiculo(id).subscribe({
      next: () => this.getVeiculos()
    });
  }

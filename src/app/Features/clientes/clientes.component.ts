@@ -46,7 +46,7 @@ export class ClientesComponent implements OnInit {
     })
   }
   removeHandler(id: number) {
-    this.service.excluirServico(id).subscribe({
+    this.service.excluirCliente(id).subscribe({
       next: () => this.getClientes()
     });
   }

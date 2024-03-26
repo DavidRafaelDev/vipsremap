@@ -38,14 +38,12 @@ export class RepresentantesComponent implements OnInit {
   openModal() {
     const modalRef = this.modalService.open(ModalAdicionarRepresentanteComponent, { size: 'lg' });
     modalRef.result.then(() => {
-
       this.getRepresentantes();
-
     })
-  }
 
+  }
   removeHandler(id: number) {
-    this.service.excluirServico(id).subscribe({
+    this.service.excluirRepresentante(id).subscribe({
       next: () => this.getRepresentantes()
     });
   }
