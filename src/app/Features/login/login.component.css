@@ -1,4 +1,10 @@
-
+#fundo{
+    background-image: url(../../../assets/images/fundologin.jpg) ;
+    background-size: cover;
+    height: 100vh;
+    position:static;
+    display: flex;
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -14,4 +20,11 @@ input{
 }
 button{
     width: 20vh;
+    background-color: rgb(61, 61, 61);;
+    color: white;
+    border: none;
+}
+button:hover{
+    
+    background-color: rgb(236, 240, 39);;
 }

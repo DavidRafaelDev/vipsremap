@@ -1,9 +1,16 @@
-<div class="container">
-    
-    <ngb-alert type="danger" *ngIf="erro" > Usuário ou Senha incorretos! </ngb-alert>
 
-    <img src="../../../assets/images/vipsremap.jpg">
-    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="login">
-    <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="senha">
-    <button class="btn btn-warning" (click)=handleLogin()>Entrar</button>
+
+<div id="fundo">  
+      
+    <div class="container">
+
+        <ngb-alert type="danger" *ngIf="erro"> Usuário ou Senha incorretos! </ngb-alert>
+
+        <img src="../../../assets/images/vipsremap.png">
+        <input type="email" class="form-control" placeholder="Usuário" [(ngModel)]="login">
+        <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="senha">
+        <button class="btn btn-warning" (click)=handleLogin()>Entrar</button>
+    </div>
+
 </div>
+    
