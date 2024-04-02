@@ -12,70 +12,70 @@ export class AppServiceService {
   constructor(private http: HttpClient) { }
 
   getRepresentantes(): Observable<any> {
-    return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/representantes')
+    return this.http.get('https://respapiremap.onrender.com/representantes')
   }
 
   excluirRepresentante(id: number): Observable<any> {
-    return this.http.delete(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes/${id}`);
+    return this.http.delete(`https://respapiremap.onrender.com/representantes/${id}`);
   }
   getServicos(): Observable<any> {
-    return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/servicos')
+    return this.http.get('https://respapiremap.onrender.com/servicos')
   }
   // adicionar serviço
   adicionarServico(servico: any): Observable<any> {
-    return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/servicos', servico);
+    return this.http.post('https://respapiremap.onrender.com/servicos', servico);
   }
   excluirServico(id: number): Observable<any> {
-    return this.http.delete(`https://vipremap-2640a0fa50a5.herokuapp.com/servicos/${id}`);
+    return this.http.delete(`https://respapiremap.onrender.com/servicos/${id}`);
   }
-  // pesquisarServico(id: string): Observable<any> {  return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/id?veiculo=${id}`)}
+  // pesquisarServico(id: string): Observable<any> {  return this.http.get(`https://respapiremap.onrender.com/id?veiculo=${id}`)}
 
   // get cliente
   getClientes(): Observable<any> {
-    return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/clientes')
+    return this.http.get('https://respapiremap.onrender.com/clientes')
   }
   excluirCliente(id: number): Observable<any> {
-    return this.http.delete(`https://vipremap-2640a0fa50a5.herokuapp.com/clientes/${id}`);
+    return this.http.delete(`https://respapiremap.onrender.com/clientes/${id}`);
   }
   // adicionar cliente
   adicionarcliente(cliente: any): Observable<any> {
-    return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/clientes', cliente);
+    return this.http.post('https://respapiremap.onrender.com/clientes', cliente);
   }
   getVeiculos(): Observable<any> {
-    return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/veiculos')
+    return this.http.get('https://respapiremap.onrender.com/veiculos')
   }
   // adicionar veiculo
   adicionarveiculo(veiculos: any): Observable<any> {
-    return this.http.post(`https://vipremap-2640a0fa50a5.herokuapp.com/veiculos`, veiculos);
+    return this.http.post(`https://respapiremap.onrender.com/veiculos`, veiculos);
   }
   excluirVeiculo(id:number):Observable<any>{
-    return this.http.delete (`https://vipremap-2640a0fa50a5.herokuapp.com/veiculos/${id}`);
+    return this.http.delete (`https://respapiremap.onrender.com/veiculos/${id}`);
   }
   getLojas(): Observable<any> {
-    return this.http.get('https://vipremap-2640a0fa50a5.herokuapp.com/loja')
+    return this.http.get('https://respapiremap.onrender.com/loja')
   }
   adicionarprodutoloja(loja: any): Observable<any> {
-    return this.http.post('https://vipremap-2640a0fa50a5.herokuapp.com/loja', loja)
+    return this.http.post('https://respapiremap.onrender.com/loja', loja)
   }
   excluirprodutoloja(id:number):Observable<any>{
-    return this.http.delete(`https://vipremap-2640a0fa50a5.herokuapp.com/loja/${id}`)
+    return this.http.delete(`https://respapiremap.onrender.com/loja/${id}`)
   }
   login(login: string, senha: string): Observable<any> {
-    return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes?primeiro_nome=${login}&senha=${senha}`)
+    return this.http.get(`https://respapiremap.onrender.com/representantes?primeiro_nome=${login}&senha=${senha}`)
   }
   pesquisarRepresentante(primeiro_nome: string): Observable<any> {
-    return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes?primeiro_nome=${primeiro_nome}`)
+    return this.http.get(`https://respapiremap.onrender.com/representantes?primeiro_nome=${primeiro_nome}`)
   }
   pesquisarCliente(nome_completo: string): Observable<any> {
-    return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/clientes?nome_completo=${nome_completo}`)
+    return this.http.get(`https://respapiremap.onrender.com/clientes?nome_completo=${nome_completo}`)
   }
   adicionarRepresentante(representantes: any): Observable<any> {
-    return this.http.post(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes`, representantes)
+    return this.http.post(`https://respapiremap.onrender.com/representantes`, representantes)
   }
   pesquisarVeiculo(placa: any): Observable<any> {
-    return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/veiculos?placa=${placa}`)
+    return this.http.get(`https://respapiremap.onrender.com/veiculos?placa=${placa}`)
   }
   buscarRepresentante(): Observable<any> {
-    return this.http.get(`https://vipremap-2640a0fa50a5.herokuapp.com/representantes`)
+    return this.http.get(`https://respapiremap.onrender.com/representantes`)
   }
 }

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'https://vipremap-2640a0fa50a5.herokuapp.com/servicos';
+  private apiUrl = 'https://respapiremap.onrender.com/servicos';
 
   constructor(private http: HttpClient) {}
 
