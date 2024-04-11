@@ -10,24 +10,29 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalAdicionarRepresentanteComponent {
 
+  constructor(private appService: AppServiceService) { }
+
+
   showErroAlert = false;
-  representantes = { id: 0, primeiro_nome: '', departamento: ''  , habilitacao: ''  , lucro: "", equipamentos: ''};
-  
-  constructor(private service: AppServiceService, private activeModal: NgbActiveModal) { }
+  novorepresentante : any = {};
+  equipamentos = ['Genius', 'Trasdata', 'Kzprog', 'Inline']
+  showSuccess = false
+  showError = false
 
-  handleCloseModal() {
-    this.activeModal.close();
-  }
-  handleErrorModal() {
-    this.showErroAlert = true;
-  }
-  adicionarRepresentante() {
-    this.service.adicionarRepresentante(this.representantes).subscribe(
-      {
-        next: this.handleCloseModal.bind(this),
-        error: this.handleErrorModal.bind(this)
-      }
 
-    );
+  onSubmit() {
+    console.log(this.novorepresentante);
+    this.appService.adicionarRepresentante(this.novorepresentante).subscribe(() => {
+      this.novorepresentante = {};
+      this.showSuccess = true
+    });
+  }
+
+    
+  closeSuccess(){
+    this.showSuccess = false;
+  }
+  closeError(){
+    this.showSuccess = false;
   }
 }

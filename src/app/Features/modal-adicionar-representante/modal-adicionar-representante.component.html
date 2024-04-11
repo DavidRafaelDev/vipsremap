@@ -1,39 +1,92 @@
-<div class="modal-adicionar-representante-container">
+<div class="add-servico-container">
+    <div class="add-servico-content">
+        <div class="header">
+        </div>
+        <div id="geral">
+        <form>
+            <h1>Adicionar Representante</h1>
+            <!-- alert-->
+            <ngb-alert type="success" (closed)="closeSuccess()" *ngIf="showSuccess">
+                Serviço adicionado com sucesso</ngb-alert>
+            <ngb-alert type="danger" *ngIf="showError" (closed)="closeError()">Serviço adicionado com
+                sucesso</ngb-alert>
 
-    <div class="modal-adicionar-representante-header">
+            <div class="form-container">
+                <div class="form-side">
 
-        <h1>Adicionar Representante</h1>
-        <h3 class="close-modal" (click)="handleCloseModal()">X</h3>
-    </div>
-    <form (ngSubmit)="adicionarRepresentante()">
-        <div class="form-group">
-            <label for="id">Código</label>
-            <input type="text" id="id" name="id" [(ngModel)]="representantes.id" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="primeiro_nome">Nome</label>
-            <input type="text" id="primeiro_nome" name="primeiro_nome" [(ngModel)]="representantes.primeiro_nome" class=" form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="departamento">Departamento</label>
-            <input type="text" id="departamento" name="departamento" [(ngModel)]="representantes.departamento" class=" form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="habilitacao">Habilitação</label>
-            <input type="text" id="habilitacao" name="habilitacao" [(ngModel)]="representantes.habilitacao" class=" form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="lucro">Lucro</label>
-            <input type="text" id="lucro" name="lucro" [(ngModel)]="representantes.lucro" class=" form-control" required>
-        </div>
+                    <div class="form-group">
+                        <label for="id">Código</label>
+                        <input type="text" id="id" name="id" [(ngModel)]="novorepresentante.id" class="form-control"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="primeiro_nome">Nome Completo</label>
+                        <input type="text" id="primeiro_nome" name="primeiro_nome"
+                            [(ngModel)]="novorepresentante.primeiro_nome" class=" form-control" required>
+                    </div>
 
-        <div class="form-group">
-            <label for="equipamentos">Equipamento</label>
-            <input type="text" id="equipamentos" name="equipamentos" [(ngModel)]="representantes.equipamentos" class=" form-control" required>
-        </div>
-           <div class="btn-adicionar-representante">
-           <button type="submit" class="btn btn-primary">Adicionar Representante</button>
-        </div>
-          
-        </form>
-    </div>
+                    <div class="form-group">
+                        <label for="veiculo">CPF</label>
+                        <input autofocus class="form-control" inputmode="numeric" mask="000.000.000-00"
+                            placeholder="CPF" type="text" [(ngModel)]="novorepresentante.CPF_representante" name="cpf">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Data de Nascimento</label>
+                        <input type="text" id="email" name="datanascimento"
+                            [(ngModel)]="novorepresentante.data_nascimento" class=" form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="departamento" [(ngModel)]="novorepresentante.email"
+                            class=" form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="departamento">Departamento</label>
+                        <input type="text" id="departamento name=" departamento
+                            [(ngModel)]="novorepresentante.departamento" class=" form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lucro">Habilitação</label>
+                        <input type="text" id="habilitacao name=" habilitacao
+                            [(ngModel)]="novorepresentante.habilitacao" class=" form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="text" id="senha" name="senha" [(ngModel)]="novorepresentante.senha"
+                            class=" form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="equipamentos">Equipamentos</label>
+                        <select class="form-control" [(ngModel)]="novorepresentante.equipamentos" name="equipamento">
+                            <option value="" disabled selected> Selecione o Equipamento</option>
+                            <option *ngfor="let equipamento of equipamentos" value="{{equipamentos}}">
+                                {{equipamento}}
+                            </option>
+                        </select>
+
+                        <div class="form-group">
+                            <label for="admissao">Admissão</label>
+                            <input type="datetime-local" [(ngModel)]="novorepresentante.admissao" class=" form-control"
+                                name="admissao">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dadosbancarios">Dados Bancários</label>
+                            <input type="text" id="dadosbancarios" name="dadosbancarios"
+                                [(ngModel)]="novorepresentante.dados_bancarios" class=" form-control" required>
+                        </div>
+
+                        <div class="btn-adicionar-representante">
+                            <button type="submit" class="btn btn-primary" id="botaoenviar"
+                                (click)="onSubmit()">AdicionarRepresentante</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>

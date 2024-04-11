@@ -30,7 +30,7 @@ export class ServicosComponent implements OnInit {
       this.servicos = result
     })
   }
-
+  
   handlePesquisar() {
     if (this.inputValue === "") {
       this.getServicos()

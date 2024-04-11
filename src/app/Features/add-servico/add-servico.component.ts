@@ -7,8 +7,9 @@ import { AppServiceService } from 'src/app/shared/services/app-service.service';
   styleUrls: ['./add-servico.component.css']
 })
 export class AddServicoComponent implements OnInit {
-
+  
   constructor(private appService: AppServiceService) { }
+
   novoServico: any = {}
   representantesName: string[] = []
   tipoServicos = ['Dpf e Egr Off', 'Dpf, Egr e bomba off', 'Dpf, Egr, bomba e arla off', 'Stage 1', 'Stage 2', 'Stage rally', 'Potência', 'Potência e Arla', 'Mapa Original']

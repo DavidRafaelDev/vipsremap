@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppServiceService } from 'src/app/shared/services/app-service.service';
 import { ModalAdicionarRepresentanteComponent } from '../modal-adicionar-representante/modal-adicionar-representante.component';
@@ -7,15 +8,17 @@ import { ModalAdicionarRepresentanteComponent } from '../modal-adicionar-represe
 @Component({
   selector: 'app-representantes',
   templateUrl: './representantes.component.html',
-  styleUrls: ['./representantes.component.css']
+  styleUrls: ['./representantes.component.css'],
+  providers: [DatePipe]
 })
 export class RepresentantesComponent implements OnInit {
+
+  constructor(private service: AppServiceService, private route: Router, private modalService: NgbModal, private datePipe: DatePipe) {}
 
   representantes: any[] = [];
   inputValue: string = "";
 
-  constructor(private service: AppServiceService, private route: Router, private modalService: NgbModal) {
-  }
+    
   ngOnInit(): void {
     this.getRepresentantes();
   }
@@ -35,6 +38,14 @@ export class RepresentantesComponent implements OnInit {
       })
     }
   }
+  handleDate(data: Date) {
+    return this.datePipe.transform(data, 'dd/MM/yyyy')
+  }
+
+ addRepresentante(){
+  this.route.navigate(["/","representantes"]) 
+}
+
   openModal() {
     const modalRef = this.modalService.open(ModalAdicionarRepresentanteComponent, { size: 'lg' });
     modalRef.result.then(() => {

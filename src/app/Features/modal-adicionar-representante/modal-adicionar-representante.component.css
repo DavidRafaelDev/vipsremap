@@ -1,33 +1,82 @@
-.modal-adicionar-representante-container{
+.add-servico-container{
     display: flex;
+    flex-direction: row;
+    background-color: rgb(231, 225, 189);
+}
+
+.add-servico-content{
+    display: flex;
+    width: 100%;
+    align-items: center;
     flex-direction: column;
-    height: auto;
-    padding: 2vh;
 }
-.modal-adicionar-representante-header{
-    padding: 2vh;
+
+#geral{
+    display: flex;
     align-items: center;
-    display: flex;
-    justify-content: space-between;
-}
-.close-modal{
-    cursor: pointer;
-}
-.btn-adicionar-representante{
-    display: flex;
     justify-content: center;
-    margin-top: 4vh;
+    flex-direction: column;
+    padding: 5vh;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.808) ;
+    box-shadow: 10px 10px rgb(75, 73, 73);
+
 }
-input{
-    margin: 1vh;
+
+.form-container{
+    display:flex;
+    flex-direction: row;
+    padding: 3vh;
 }
-select{
-    margin: 1vh;
+
+.form-side{
+    padding: 5vh;
+    margin: 10px;
+
 }
-button{
+
+#botaoenviar{
+    width: 60%;
+    display: flex;
     align-items: center;
-    width: 90%;
-    background-color: #3a3939;
-    color: white;
+    justify-content: center;
+    margin-left: 20%;
+    color:rgb(236, 236, 236); ;
+    background-color: #0a0a0a;
+    border: none;
+}
+.form-group{
+    margin: 1vh;
+    color: #5e5e5e;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.date-control{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     
+}
+.titulo{
+    text-align: center;
+    border: 1px solid rgb(243, 243, 243);
+    color: #2b2c2e; 
+    font-weight: bold;
+}
+
+.header{
+    display: flex;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+    border-radius:10px;
+    width: 100%;
+    height: 7vh;
+    
+}
+.form-control{
+    box-shadow: 0 0 0 0 ;
+    outline: 2;
+    border: 1px solid rgb(155, 155, 155);
+    width: 60vh;
+    border-radius: 15px;
 }
