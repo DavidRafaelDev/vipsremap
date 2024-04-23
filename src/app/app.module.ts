@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'home', component: DashboardComponent },
   { path: 'servico', component: AddServicoComponent },
   { path: 'representantes', component: RepresentantesComponent },
+  { path: 'representanteadc', component: ModalAdicionarRepresentanteComponent },
   { path: 'servicos', component: ServicosComponent },
   { path: 'clientes', component: ClientesComponent },
   { path: 'veiculos', component: VeiculosComponent },

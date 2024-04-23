@@ -1,10 +1,11 @@
 <div class="add-servico-container">
+    <app-menu></app-menu>
     <div class="add-servico-content">
         <div class="header">
         </div>
         <div id="geral">
         <form>
-            <h1>Adicionar Representante</h1>
+            <h1>Representante</h1>
             <!-- alert-->
             <ngb-alert type="success" (closed)="closeSuccess()" *ngIf="showSuccess">
                 Serviço adicionado com sucesso</ngb-alert>
@@ -50,7 +51,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="lucro">Habilitação</label>
+                        <label for="habilitacao">Habilitação</label>
                         <input type="text" id="habilitacao name=" habilitacao
                             [(ngModel)]="novorepresentante.habilitacao" class=" form-control" required>
                     </div>
@@ -65,8 +66,9 @@
                         <label for="equipamentos">Equipamentos</label>
                         <select class="form-control" [(ngModel)]="novorepresentante.equipamentos" name="equipamento">
                             <option value="" disabled selected> Selecione o Equipamento</option>
-                            <option *ngfor="let equipamento of equipamentos" value="{{equipamentos}}">
+                            <option *ngFor="let equipamento of equipamentos" value="{{equipamento}}">
                                 {{equipamento}}
+
                             </option>
                         </select>
 

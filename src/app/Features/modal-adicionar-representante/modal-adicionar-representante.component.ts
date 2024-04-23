@@ -27,8 +27,6 @@ export class ModalAdicionarRepresentanteComponent {
       this.showSuccess = true
     });
   }
-
-    
   closeSuccess(){
     this.showSuccess = false;
   }

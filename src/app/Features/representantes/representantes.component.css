@@ -13,8 +13,8 @@
 
 .dashboard-container {
     display: flex;
-    flex-direction: row;
-    background-color: rgb(248, 230, 129);
+    flex-direction: row; 
+    background-color: rgb(178, 180, 155);
 }
 
 .dashboard-content {

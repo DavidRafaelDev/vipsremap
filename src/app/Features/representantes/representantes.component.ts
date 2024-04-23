@@ -43,7 +43,7 @@ export class RepresentantesComponent implements OnInit {
   }
 
  addRepresentante(){
-  this.route.navigate(["/","representantes"]) 
+  this.route.navigate(["/","representanteadc"]) 
 }
 
   openModal() {
