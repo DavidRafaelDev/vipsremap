@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from 'src/app/shared/services/app-service.service';
 
+
+
 @Component({
   selector: 'app-add-servico',
   templateUrl: './add-servico.component.html',
   styleUrls: ['./add-servico.component.css']
 })
 export class AddServicoComponent implements OnInit {
-  
+
   constructor(private appService: AppServiceService) { }
 
   novoServico: any = {}
@@ -22,7 +24,7 @@ export class AddServicoComponent implements OnInit {
 
     this.appService.getRepresentantes().subscribe((representantes) => {
       representantes.forEach((representante: any | undefined) => {
-        if (representante.primeiro_nome != 'admin') {
+        if (representante.primeiro_nome != 'Cristiano') {
           this.representantesName.push(representante.primeiro_nome)
         }
       });
@@ -37,10 +39,10 @@ export class AddServicoComponent implements OnInit {
     });
   }
 
-  closeSuccess(){
+  closeSuccess() {
     this.showSuccess = false;
   }
-  closeError(){
+  closeError() {
     this.showSuccess = false;
   }
 }

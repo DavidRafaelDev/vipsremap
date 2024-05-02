@@ -6,10 +6,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-
 export class AppServiceService {
+  
+  representante: any = null;
 
   constructor(private http: HttpClient) { }
+  
+  login(login: string, senha: string): Observable<any> {
+    return this.http.get(`https://respapiremap.onrender.com/representantes?primeiro_nome=${login}&senha=${senha}`);
+  }
+  getNomeUsuario(): string {
+    return this.representante.primeiro_nome;    
+  }
 
   getRepresentantes(): Observable<any> {
     return this.http.get('https://respapiremap.onrender.com/representantes')
@@ -59,9 +67,6 @@ export class AppServiceService {
   }
   excluirprodutoloja(id:number):Observable<any>{
     return this.http.delete(`https://respapiremap.onrender.com/loja/${id}`)
-  }
-  login(login: string, senha: string): Observable<any> {
-    return this.http.get(`https://respapiremap.onrender.com/representantes?primeiro_nome=${login}&senha=${senha}`)
   }
   pesquisarRepresentante(primeiro_nome: string): Observable<any> {
     return this.http.get(`https://respapiremap.onrender.com/representantes?primeiro_nome=${primeiro_nome}`)

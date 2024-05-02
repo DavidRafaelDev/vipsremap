@@ -20,11 +20,8 @@
                     <div class="form-side">
                         <div class="form-group">
                             <label for="representante">Representante</label>
-                            <select class="form-control" [(ngModel)]="novoServico.representante" name="representante">
-                                <option value="" disabled selected>Seleciona representante</option>
-                                <option *ngFor="let representante of representantesName" value="{{representante}}">
-                                    {{representante}}
-                                </option>
+                            <select class="form-control" [(ngModel)]="representantesName" name="representante">
+                                <option [value]="representantesName">{{ representantesName }}</option>
                             </select>
                         </div>
 
