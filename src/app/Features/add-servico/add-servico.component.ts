@@ -22,15 +22,10 @@ export class AddServicoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.appService.getRepresentantes().subscribe((representantes) => {
-      representantes.forEach((representante: any | undefined) => {
-        if (representante.primeiro_nome != 'Cristiano') {
-          this.representantesName.push(representante.primeiro_nome)
-        }
-      });
-    })
+    this.representantesName.push(this.appService.getNomeUsuario())
+    console.log(this.appService.getNomeUsuario())
+    
   }
-
   onSubmit() {
     console.log(this.novoServico);
     this.appService.adicionarServico(this.novoServico).subscribe(() => {

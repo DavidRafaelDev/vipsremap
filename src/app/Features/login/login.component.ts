@@ -20,9 +20,12 @@ export class LoginComponent {
     console.log(this.login);
 
     this.service.login(this.login , this.senha).subscribe((result)=>{
-    console.log(result.length);
+    console.log(result , 'asdjdsajsdaj');
 
     if (result.length>0){
+    
+    this.service.setNomeUsuario(result[0].primeiro_nome);
+
     this.router.navigate(["/", "home"]);
     }
     else{

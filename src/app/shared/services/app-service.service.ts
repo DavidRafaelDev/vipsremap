@@ -7,16 +7,27 @@ import { Observable } from 'rxjs';
 })
 
 export class AppServiceService {
-  
+
   representante: any = null;
 
   constructor(private http: HttpClient) { }
-  
+
   login(login: string, senha: string): Observable<any> {
-    return this.http.get(`https://respapiremap.onrender.com/representantes?primeiro_nome=${login}&senha=${senha}`);
+
+    this.representante = this.http.get(`https://respapiremap.onrender.com/representantes?primeiro_nome=${login}&senha=${senha}`);
+    return this.representante;
   }
+
   getNomeUsuario(): string {
-    return this.representante.primeiro_nome;    
+    console.log(this.representante)
+    return this.representante;
+  }
+  setNomeUsuario(nomeusuario:string){
+
+    this.representante = nomeusuario;
+  }
+  getRepresentante() {
+    return this.representante;
   }
 
   getRepresentantes(): Observable<any> {
@@ -56,8 +67,8 @@ export class AppServiceService {
   adicionarveiculo(veiculos: any): Observable<any> {
     return this.http.post(`https://respapiremap.onrender.com/veiculos`, veiculos);
   }
-  excluirVeiculo(id:number):Observable<any>{
-    return this.http.delete (`https://respapiremap.onrender.com/veiculos/${id}`);
+  excluirVeiculo(id: number): Observable<any> {
+    return this.http.delete(`https://respapiremap.onrender.com/veiculos/${id}`);
   }
   getLojas(): Observable<any> {
     return this.http.get('https://respapiremap.onrender.com/loja')
@@ -65,7 +76,7 @@ export class AppServiceService {
   adicionarprodutoloja(loja: any): Observable<any> {
     return this.http.post('https://respapiremap.onrender.com/loja', loja)
   }
-  excluirprodutoloja(id:number):Observable<any>{
+  excluirprodutoloja(id: number): Observable<any> {
     return this.http.delete(`https://respapiremap.onrender.com/loja/${id}`)
   }
   pesquisarRepresentante(primeiro_nome: string): Observable<any> {
