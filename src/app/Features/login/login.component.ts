@@ -10,29 +10,29 @@ import { AppServiceService } from 'src/app/shared/services/app-service.service';
 
 export class LoginComponent {
 
-  login:string = ""
-  senha:string = ""
-  erro:boolean = false;
+  login: string = ""
+  senha: string = ""
+  erro: boolean = false;
 
   constructor(private router: Router, private service: AppServiceService) { };
 
   handleLogin() {
     console.log(this.login);
 
-    this.service.login(this.login , this.senha).subscribe((result)=>{
-    console.log(result , 'asdjdsajsdaj');
+    this.service.login(this.login, this.senha).subscribe((result) => {
+      console.log(result, 'asdjdsajsdaj');
 
-    if (result.length>0){
-    
-    this.service.setNomeUsuario(result[0].primeiro_nome);
+      if (result.length > 0) {
 
-    this.router.navigate(["/", "home"]);
-    }
-    else{
+        this.service.setNomeUsuario(result[0].primeiro_nome);
 
-     this.erro = true;
+        this.router.navigate(["/", "home"]);
+      }
+      else {
 
-    }
+        this.erro = true;
+
+      }
     })
   }
 }

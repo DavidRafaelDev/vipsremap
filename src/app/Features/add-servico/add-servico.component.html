@@ -9,8 +9,9 @@
         <div id="geral">
             <form>
                 <!-- alert-->
-                <ngb-alert type="success" (closed)="closeSuccess()" *ngIf="showSuccess">Serviço adicionado com
-                    sucesso</ngb-alert>
+                <ngb-alert type="success" (closed)="closeSuccess()"
+                 *ngIf="showSuccess"> Serviço adicionado volte a Aba 'Serviços'
+                </ngb-alert>
                 <ngb-alert type="danger" *ngIf="showError" (closed)="closeError()">Serviço adicionado com
                     sucesso</ngb-alert>
 
@@ -20,21 +21,22 @@
                     <div class="form-side">
                         <div class="form-group">
                             <label for="representante">Representante</label>
-                            <select class="form-control" disabled selected   [(ngModel)]="representantesName" name="representante">
+                            <select class="form-control" disabled selected [(ngModel)]="representantesName"
+                                name="representante">
                                 <option [value]="representantesName">{{ representantesName }}</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="veiculo">Cliente</label>
-                            <input autofocus class="form-control" inputmode="numeric" mask="000.000.000-00"
-                                placeholder="CPF" type="text" [(ngModel)]="novoServico.clienteCpf" name="cpf">
+                            <label for="veiculo">Veiculo</label>
+                            <input class="form-control" placeholder="Digite o veículo aqui" type="text"
+                                [(ngModel)]="novoServico.veiculo" name="veiculo">
                         </div>
 
                         <div class="form-group">
-                            <label for="veiculo">Veiculo</label>
-                            <input class="form-control" placeholder="Digite a placa do veiculo" type="text"
-                                [(ngModel)]="novoServico.veiculoPlaca" name="veiculo">
+                            <label for="horaPedido">Placa</label>
+                            <input maxlength="7" placeholder="Digite a Placa do veículo aqui" class="form-control"
+                                [(ngModel)]="novoServico.placa" name="horaPedido">
                         </div>
 
                         <div class="form-group">
@@ -47,58 +49,64 @@
                             </select>
                         </div>
 
+                        <div class="form-side">
+                            <div class="form-group">
+                                <label for="acessorios">Acessórios</label>
+                                <select class="form-control" [(ngModel)]="novoServico.acessorios" name="equipamento">
+                                    <option value="" selected disabled>Selecione o equipamento</option>
+                                    <option *ngFor="let acessorio of acessorios" value="{{acessorio}}">
+                                        {{acessorio}}
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="equipamento">Equipamento</label>
+                                <select class="form-control" [(ngModel)]="novoServico.equipamento" name="equipamento">
+                                    <option value="" disabled selected>Selecione o Equipamento</option>
+                                    <option *ngFor="let equipamento of equipamentos" value="{{equipamento}}">
+                                        {{equipamento}}
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="custo">Valor</label>
+                                <input type="text" class="form-control" [(ngModel)]="novoServico.preco"
+                                    placeholder="Digite o valor"
+                                    [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
+                                    currencyMask required name="custo" />
+                            </div>
+                                
                         <div class="form-group">
-                            <label for="equipamento">Equipamento</label>
-                            <select class="form-control" [(ngModel)]="novoServico.equipamento" name="equipamento">
-                                <option value="" disabled selected>Selecione o Equipamento</option>
-                                <option *ngFor="let equipamento of equipamentos" value="{{equipamento}}">
-                                    {{equipamento}}
+                            <label for="servicos">Estado</label>
+                            <select class="form-control" [(ngModel)]="novoServico.estado" name="tipoServico">
+                                <option value="" disabled selected>Selecione o Estado</option>
+                                <option *ngFor="let servico of estados" value="{{servico}}">
+                                    {{servico}}
                                 </option>
                             </select>
                         </div>
+                            
                         <div class="form-group">
-                            <label for="garantia">Garantia</label>
-                            <select class="form-control" [(ngModel)]="novoServico.garantia" name="garantia">
-                                <option value="" selected disabled>Selecione a opção</option>
-                                <option value="sim">Sim</option>
-                                <option value="nao">Não</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-side">
-                        <div class="form-group">
-                            <label for="acessorios">Acessórios</label>
-                            <select class="form-control" [(ngModel)]="novoServico.acessorios" name="equipamento">
-                                <option value="" selected disabled>Selecione o equipamento</option>
-                                <option *ngFor="let acessorio of acessorios" value="{{acessorio}}">
-                                    {{acessorio}}
-                                </option>
-                            </select>
+                            <label for="cidade">Cidade</label>
+                            <input class="form-control" placeholder="Digite a cidade aqui" type="text"
+                                [(ngModel)]="novoServico.cidade" name="veiculo">
                         </div>
 
-                        <div class="form-group">
-                            <label for="horaPedido">Hora do pedido</label>
-                            <input type="datetime-local" class="form-control" [(ngModel)]="novoServico.horaPedido"
-                                name="horaPedido">
+                            <div class="form-group">
+                                <label for="garantia">Garantia</label>
+                                <select class="form-control" [(ngModel)]="novoServico.garantia" name="garantia">
+                                    <option value="" selected disabled>Selecione a opção</option>
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                            </div>
                         </div>
-
                         <div class="form-group">
-                            <label for="horaEnvio">Hora do envio</label>
-                            <input type="datetime-local" class="form-control" [(ngModel)]="novoServico.horaEnvio"
-                                name="horaEnvio">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="horaFinalizacao">Hora da finalização</label>
-                            <input type="datetime-local" class="form-control" [(ngModel)]="novoServico.horaFinalizacao"
-                                name="horaFinalizacao">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="custo">Custo</label>
-                            <input type="text" class="form-control" [(ngModel)]="novoServico.preco" placeholder="Digite o valor"
-                                [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }" currencyMask
-                                required name="custo" />
+                            <label for="inputHora">Hora atual</label>
+                            <input type="time" id="inputHora" class="form-control" [(ngModel)]="novoServico.horaAtual"
+                                name="horaAtual">
                         </div>
 
                         <div class="form-group">

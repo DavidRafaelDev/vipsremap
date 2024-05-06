@@ -9,8 +9,11 @@ import { Observable } from 'rxjs';
 export class AppServiceService {
 
   representante: any = null;
+  horaAtual: any;
+  dataAtual: any;
 
   constructor(private http: HttpClient) { }
+
 
   login(login: string, senha: string): Observable<any> {
 
@@ -22,7 +25,7 @@ export class AppServiceService {
     console.log(this.representante)
     return this.representante;
   }
-  setNomeUsuario(nomeusuario:string){
+  setNomeUsuario(nomeusuario: string) {
 
     this.representante = nomeusuario;
   }
@@ -94,4 +97,5 @@ export class AppServiceService {
   buscarRepresentante(): Observable<any> {
     return this.http.get(`https://respapiremap.onrender.com/representantes`)
   }
+
 }

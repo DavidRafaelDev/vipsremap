@@ -30,14 +30,18 @@
         <thead>
           <tr>
             <th scope="col">id</th>
-            <th scope="col">Cliente</th>
-            <th scope="col">Veículo</th>
-            <th scope="col">Serviço</th>
-            <th scope="col">Representante</th>
-            <th scope="col">Custo</th>
-            <th scope="col">Pedido</th>
-            <th scope="col">Envio</th>
-            <th scope="col">Finalização</th>
+            <th scope="col">Veiculo</th>
+            <th scope="col">Placa</th>
+            <th scope="col">Tipo de serviço</th>
+            <th scope="col">Acessórios</th>
+            <th scope="col">Equipamento</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Garantia</th>
+            <th scope="col">Hora Atual</th>
+            <th scope="col">Obs</th>
+
             <th>
             </th>
           </tr>
@@ -45,14 +49,19 @@
         <tbody>
           <tr *ngFor="let servico of servicos">
             <th scope="col">{{servico.id}} </th>
-            <td scope="col">{{servico.clienteCpf}} </td>
-            <td scope="col">{{servico.veiculoPlaca}} </td>
+            <td scope="col">{{servico.veiculo}} </td>
+            <td scope="col">{{servico.placa}} </td>
             <td scope="col">{{servico.tipoServico}} </td>
-            <td scope="col">{{servico.representante}} </td>
-            <td scope="col">{{servico.preco}} </td>
-            <td scope="col">{{handleDate(servico.horaPedido)}} </td>
-            <td scope="col">{{handleDate(servico.horaEnvio)}} </td>
-            <td scope="col">{{handleDate(servico.horaFinalizacao)}} </td>
+            <td scope="col">{{servico.acessorios}} </td>
+            <td scope="col">{{servico.equipamento}} </td>
+            <td scope="col">{{servico.preco | currency: 'R$'}} </td>
+            <td scope="col">{{servico.estado}} </td>
+            <td scope="col">{{servico.cidade}} </td>
+            <td scope="col">{{servico.garantia}} </td>
+            <td scope="col">{{(servico.horaAtual)}} </td>
+            <td scope="col">{{servico.observacao}} </td>
+
+    
 
             <!-- botão excluir -->
             <button (click)="removeHandler(servico.id)" id="delete">
