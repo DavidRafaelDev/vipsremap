@@ -10,6 +10,7 @@ import { DatePipe } from '@angular/common';
   providers: [DatePipe]
 })
 export class ServicosComponent implements OnInit {
+
   servicos: any[] = [];
   inputValue: string = "";
   produtoService: any;
@@ -36,7 +37,7 @@ export class ServicosComponent implements OnInit {
       this.getServicos()
     } else {
       console.log(this.inputValue);
-      this.service.pesquisarRepresentante(this.inputValue).subscribe((result: any) => {
+      this.service.pesquisarVeiculo(this.inputValue).subscribe((result: any) => {
         this.servicos = result;
       })
     }

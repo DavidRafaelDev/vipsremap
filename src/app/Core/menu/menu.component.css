@@ -1,5 +1,4 @@
 
-
 #user_avatar{
     width: 80px;
     height: 80px;
@@ -23,13 +22,6 @@
 
 }
 
-#user_infos :last-child{ 
-    
-    color: rgb(0, 0, 0);
-    font-size: 10px;
-    text-align: center;
-}
-
 #user:hover {
     color: #ffffff;
 }
@@ -44,15 +36,7 @@
     padding: 0 1.7rem;
     position: sticky;
     overflow: hidden;
-    transition: all 0.5s linear;
 }
-
-/*
-.menu-container:hover {
-    width: 240px;
-    transition: 0.7s;
-}
-*/
 .menu-container li{
     padding: 1rem;
     margin: 8px 0;
@@ -76,6 +60,7 @@
 
 #sidebar_content li:hover, .active{
     background-color: rgb(75, 73, 73);
+ 
 }
 #sidebar_content span{
    overflow: hidden;
